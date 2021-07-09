@@ -1,0 +1,58 @@
+arp protection devices on devices
+
+NETCUT tool.
+
+TUXCUT.
+
+SNIFFDET
+
+XARP
+
+ARPWATCH
+
+
+use static entries in arp
+
+catalyst 6500 release 12.2SX Software configuration guide.
+
+router firewall switch
+Port Protection
+port security
+
+
+
+IEEE 802.1AE
+IEEE 802.1X
+
+EAP over LAN
+port based network access control (PNAC)
+
+
+use port security
+use dhcp snooping
+
+use VPN on local network
+
+create virtual encrypted network on top of physical network
+router firewall would have to be powerful enough to support this encryption.
+traffic would be encrypted in vpn as it talks to clients.
+
+cross platform support
+what technology to use
+IPSec. is used.
+locks down network from security point of view.
+
+
+
+All traffic should be denied unless implicitly allowed.
+
+routers with custom firmware
+network interface controller of vlan devices must support ieee 802.1Q vlan tagging
+switch connected to lan interface capable of supporting configuration and trunking of vlan ports.
+
+pfSense. supports vlan
+dd-wrt supports vlan
+iptables supports vlan
+
+
+

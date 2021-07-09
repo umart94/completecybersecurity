@@ -1,0 +1,75 @@
+PS D:\Softwares\Security\PasswordCracking\hashcat-6.1.1\hashcat-6.1.1> .\hashcat.exe -m 3200 -a 0 pattern-hashes.txt rockyou.txt
+hashcat (v6.1.1) starting...
+
+* Device #1: WARNING! Kernel exec timeout is not disabled.
+             This may cause "CL_OUT_OF_RESOURCES" or related errors.
+             To disable the timeout, see: https://hashcat.net/q/timeoutpatch
+* Device #2: WARNING! Kernel exec timeout is not disabled.
+             This may cause "CL_OUT_OF_RESOURCES" or related errors.
+             To disable the timeout, see: https://hashcat.net/q/timeoutpatch
+* Device #3: Unstable OpenCL driver detected!
+
+This OpenCL driver has been marked as likely to fail kernel compilation or to produce false negatives.
+You can use --force to override this, but do not report related errors.
+
+CUDA API (CUDA 11.1)
+====================
+* Device #1: GeForce GTX 1050, 1646/2048 MB, 5MCU
+
+OpenCL API (OpenCL 1.2 CUDA 11.1.114) - Platform #1 [NVIDIA Corporation]
+========================================================================
+* Device #2: GeForce GTX 1050, skipped
+
+OpenCL API (OpenCL 2.1 ) - Platform #2 [Intel(R) Corporation]
+=============================================================
+* Device #3: Intel(R) UHD Graphics 630, skipped
+
+Minimum password length supported by kernel: 0
+Maximum password length supported by kernel: 72
+
+Hashes: 3 digests; 3 unique digests, 3 unique salts
+Bitmaps: 16 bits, 65536 entries, 0x0000ffff mask, 262144 bytes, 5/13 rotates
+Rules: 1
+
+Applicable optimizers applied:
+* Zero-Byte
+
+Watchdog: Temperature abort trigger set to 90c
+
+Host memory required for this attack: 80 MB
+
+Dictionary cache hit:
+* Filename..: rockyou.txt
+* Passwords.: 14344385
+* Bytes.....: 139921507
+* Keyspace..: 14344385
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [q]uit =>
+
+Session..........: hashcat
+Status...........: Running
+Hash.Name........: bcrypt $2*$, Blowfish (Unix)
+Hash.Target......: pattern-hashes.txt
+Time.Started.....: Sat Nov 21 15:02:20 2020 (5 secs)
+Time.Estimated...: Sat Nov 21 17:33:03 2020 (2 hours, 30 mins)
+Guess.Base.......: File (rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:     4759 H/s (2.92ms) @ Accel:2 Loops:4 Thr:12 Vec:1
+Recovered........: 0/3 (0.00%) Digests, 0/3 (0.00%) Salts
+Progress.........: 22680/43033155 (0.05%)
+Rejected.........: 0/22680 (0.00%)
+Restore.Point....: 7560/14344385 (0.05%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:12-16
+Candidates.#1....: ELIZABETH -> thesimpsons
+Hardware.Mon.#1..: Temp: 39c Fan: 29% Util: 95% Core:1708MHz Mem:3504MHz Bus:16
+
+Cracking performance lower than expected?
+
+* Append -w 3 to the commandline.
+  This can cause your screen to lag.
+
+* Update your backend API runtime / driver the right way:
+  https://hashcat.net/faq/wrongdriver
+
+* Create more work items to make use of your parallelization power:
+  https://hashcat.net/faq/morework

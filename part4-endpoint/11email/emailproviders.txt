@@ -1,0 +1,22 @@
+ghostmail
+tutanota
+
+
+store email encrypted
+secure tls ssl cipher suites pfs
+pass privacy test
+anonymous payments
+cost
+storage limit
+no personal information
+no external providers.
+
+accesible via tor vpn jondonym
+dedicated servers
+hardened servers
+no extra ports open
+alias bonus to have
+check history
+
+host own domain
+email client webmail or both.

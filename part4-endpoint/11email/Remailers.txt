@@ -1,0 +1,15 @@
+Remailers :
+
+mixmaster @ sourceforge
+
+dizum
+
+Type I remailer - cypherpunk - cannot answer a message sent
+
+type II mixmaster - sends messages via smtp , fixed packet size
+cannot answer a message sent.
+type iii mixminion - type iii anonymous remailer.
+
+nym server - pseudonym server paranoia remailer.
+
+

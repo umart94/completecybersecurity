@@ -1,0 +1,21 @@
+JSAN - https://psal.cs.drexel.edu/index.php/JStylo-Anonymouth
+signature stylometry tool
+
+Anti stylometry tools : 
+reLANG
+
+
+mitigation to automated recognition includes :
+
+use authorship evasion tools
+use multiple sub aliases
+the less you write the better
+post text from sources other than yourself
+impersonate other users styles
+include extra data in posts
+if everyone uses leetspeak this makes identification harder.
+
+
+anonymous coding style can also be tracked.
+
+

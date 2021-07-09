@@ -1,0 +1,5 @@
+connect to IRC channel using Tor.
+
+ip address was leaked.
+
+correlated attacks

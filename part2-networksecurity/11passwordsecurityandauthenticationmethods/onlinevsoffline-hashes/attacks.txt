@@ -1,0 +1,140 @@
+dictionary attack
+out of some specific words, try and guess password
+
+bruteforce attack
+for every single password length character combination.
+try and guess password ( all permutations and combinations.)
+
+
+hybrid dictionary + bruteforce
+
+
+combinator attack
+
+What is a Combinator Attack?
+A combinator attack works by taking words from one or two wordlists and joining them together to try as a password. For example, if wordlist one contained the following:
+
+fast
+slow
+big
+And wordlist two contained:
+
+car
+truck
+building
+A combinator attack will try the following:
+
+fastcar
+fasttruck
+fastbuilding
+slowcar
+slowtruck
+slowbuilding
+bigcar
+bigtruck
+bigbuilding
+Although you will get combinations that make no sense, such as “slowbuilding” and “fastbuilding”. You will get a lot of joined words which do make sense and could potentially be someone’s password. Also, just because some of the joins don’t make sense, it doesn’t mean you should assume someone wouldn’t choose it as a password.
+
+It’s also important to mention with this attack that the words in wordlist one will not be tried with wordlist two in reverse order. For example, “carfast’, “truckfast” etc.
+
+With a single wordlist, the combinator attack will combine each word with itself and every other in the list.
+
+For example, a combinator attack using a single wordlist such as:
+
+fast
+slow
+big
+Would produce:
+
+fastfast
+fastslow
+fastbig
+slowfast
+slowslow
+slowbig
+bigfast
+bigslow
+bigbig
+
+
+
+
+
+
+
+
+
+
+Combinator Attack
+Description
+Each word of a dictionary is appended to each word in a dictionary.
+
+Input
+If our dictionary contains the words:
+
+pass
+12345
+omg
+Test
+Output
+Hashcat creates the following password candidates:
+
+passpass
+pass12345
+passomg
+passTest
+12345pass
+1234512345
+12345omg
+12345Test
+omgpass
+omg12345
+omgomg
+omgTest
+Testpass
+Test12345
+Testomg
+TestTest
+Combinator Attack
+Using the Combinator Attack within hashcat (not standalone version of Combinator Attack).
+
+The command for the Combinator Attack in hashcat is -a 1
+
+You need to specify exactly 2 dictionaries in you command line: e.g.
+
+./hashcat64.bin -m 0 -a 1 hash.txt dict1.txt dict2.txt
+If you wish to add rules to either the left or right dictionary or both at once then you can use the -j or -k commands.
+
+  -j,  --rule-left=RULE              Single rule applied to each word on the left dictionary
+
+  -k,  --rule-right=RULE             Single rule applied to each word on the right dictionary
+Example.
+
+Dictionary 1
+
+yellow
+green
+black
+blue
+Dictionary 2
+
+car
+bike
+Commands
+
+-j '$-'
+
+-k '$!'
+
+Note: the quotes are only there to escape the $ character, which would otherwise allow $- to be interpreted as a variable. The rules that are used here are still just $- and $!. Escaping might not work exactly the same way on each operating system and with each shell interpreter (if you are unsure about what needs to be escaped and how it should be escape, please consider looking up your OS and/or shell interpreter manual).
+
+The output would be…
+
+yellow-car!
+green-car!
+black-car!
+blue-car!
+yellow-bike!
+green-bike!
+black-bike!
+blue-bike!

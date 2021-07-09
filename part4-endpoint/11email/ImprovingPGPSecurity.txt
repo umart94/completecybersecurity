@@ -1,0 +1,39 @@
+openpgp keys - securing
+
+strengthen default settings and ciphers - e.g gnupg - which is what we are using
+
+
+commands are same on all OS's
+
+gpg command
+gpg2 command
+
+gpg2 is aimed at desktops
+
+
+
+1. generate keypair
+see preferences for that key.
+gpg and gpg2 interchangeable ( whatever we use )
+
+
+
+gpg -k
+
+gpg --edit-key ID_OF_KEY_HERE
+
+
+showpref
+
+
+nano ~/.gnupg/gpg.conf
+
+edit preferences
+
+cat > ~/.gnupg/gpg.conf << !
+
+
+---------------------------
+
+
+

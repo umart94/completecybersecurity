@@ -1,0 +1,15 @@
+The Sec-Fetch-Site fetch metadata header indicates the relationship between a request initiator's origin and the origin of the resource.
+
+Syntax
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Site: same-site
+Sec-Fetch-Site: none
+
+Values
+cross-site
+same-origin
+same-site
+none
+This request does not relate to any context like site, origin, or frame. This can happen when user had initiated this request by, e.g. directly entering a URL in the address bar, opening a bookmark, or draging-and-dropping a file into the browser window.
+

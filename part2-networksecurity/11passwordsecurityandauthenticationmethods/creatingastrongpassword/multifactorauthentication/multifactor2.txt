@@ -1,0 +1,20 @@
+https://twofactorauth.org/
+
+use web services that can tell us which Multi factor authentication methods
+the website we want to access - uses.
+
+https://www.dongleauth.info/
+
+
+authy
+yubikey
+yubikey luks full disk encryption
+can work with veracrypt. and other disk encryptions.
+
+
+phishing
+mitm attacks
+
+SQRL demo
+GETCLEF - discontinued.
+

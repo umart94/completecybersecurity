@@ -1,0 +1,51 @@
+hardware addresses are traced back to you through a trail.
+
+we can change these hardware addresses ( MAC Randomization )
+
+isolation of this HWaddr
+
+attacker gets mac address off our NIC
+
+the Tor Exploit was used to identify these mac addresses.
+
+commands : 
+
+
+ipconfig
+ifconfig
+
+ip addr
+
+ip a show eth0
+
+
+
+first 3 bytes are manufacturer id
+next 3 bytes are unique to NIC card.
+
+Technitium MAC Address Changer v6
+
+
+sudo apt-get install -y macchanger
+
+
+
+sudo ifconfig eth0 down
+
+
+sudo macchanger -r eth0
+sudo ifconfig eth0 up
+
+
+on macs
+
+sudo ifconfig eth0 ether mac_address
+
+macdaddyx
+wifispoof
+
+
+the tails Operating ssystem... changes the mac addresses ( mac address anonymization )
+
+
+

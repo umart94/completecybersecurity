@@ -1,0 +1,79 @@
+2 virtual machines will be installed.
+whonix gateway
+whonix workstation
+
+
+gateway purpose is to enforce network isolation.
+
+workstation ip is changed
+
+malware with root access cannot find the users real ip
+
+we would have to hack the gateway so it is difficult
+
+also with the vm hardware ids and mac addresses are also different and protected.
+
+Nyx - anonymizing relay status monitor for tor network.
+
+badnwidth usage
+resource usage
+etc.
+
+we can set up tor config to be a relay or bridge.
+sdwdate
+whonix check
+
+for time sync and updates to OS
+
+torcc file 
+
+DisableNetwork 0
+Sandbox 1
+
+
+global firewall settings
+
+
+
+
+-------------------------
+whonix workstation
+
+whonix gateway - acts as transparent tor and socks proxy
+transparent means that even if downloaded applications are not configured to use tor
+they will use the tor network.
+dont need to be configured, will go through tor proxy
+
+all apps use same tor circuit.
+
+
+
+hops for tor network
+
+
+
+Socks proxied applications
+ports they use
+preconfigured or not
+
+whonix.org/wiki/Stream_Isolation..
+
+socks proxy.
+
+this protects against identity correlation attacks.
+
+physical isolation ( read docs )
+
+
+icedove , enigmail , xul-ext-torbirdy
+
+------------------------
+
+whonix weaknesses
+wont protect headers or metadata
+wont protect against firmware attacks and rootkits
+hardware compromises
+
+
+
+

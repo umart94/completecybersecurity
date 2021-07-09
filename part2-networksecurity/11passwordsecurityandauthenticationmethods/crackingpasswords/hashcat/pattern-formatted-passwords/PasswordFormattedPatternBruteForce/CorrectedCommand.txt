@@ -1,0 +1,32 @@
+At about 20,000 hashes per second (H/s), my GPU is going to take about 35 more minutes to attempt the remaining passwords in rockyou.txt. Depending on your hardware, your estimated time remaining might be far higher than that. I don’t know about you, but I’m impatient; press Q on your keyboard to quit hashcat.
+
+We’re going to need to adjust our tactics a bit. Instead of attack mode 0—a straight dictionary attack—we’re going to switch to attack mode 3, which is a brute force attack. Our new command will look like this:
+
+1
+.\hashcat.exe -m 3200 -a 3 hashes.txt 'SKY-TEST-?d?d?d?d'
+Let’s go over the new elements of this command:
+
+-a 3: We’re using attack mode 3 now, which corresponds to a brute force attack. You can get a full list of attack modes and their IDs in the output from .\hashcat.exe -h; there are also more detailed descriptions on hashcat’s website.
+Attack mode 3 still only takes a single parameter, but it’s not a wordlist file this time. Instead, we have a mask. This tells hashcat the format of the passwords it should attempt. Let’s break this mask down:
+The single quotes surrounding the mask ensure that PowerShell doesn’t interpret any symbols has having a special meaning.
+SKY-TEST- is used verbatim in each password.
+Each occurrence of ?d will be replaced with a digit; this is called a charset. There are other charsets built into hashcat, and you can define your own. The built-in charsets include:
+?l: lowercase letters (a-z)
+?u: uppercase letters (A-Z)
+?d: decimal digits (0-9)
+?h: lowercase hexadecimal digits (0-9, a-f)
+?H: uppercase hexadecimal digits (0-9, A-F)
+?s: basic ASCII symbols (e.g., @)
+?a: printable ASCII characters (numbers, letters, symbols)
+?b: every possible byte value, from 0x00 to 0xff
+With these parameters, hashcat will attempt every password from SKY-TEST-0000 through SKY-TEST-9999, though not necessarily in that order.
+
+Run the command. Depending on your hardware, it may take a little longer than before, but eventually you’ll get the passwords:
+
+1
+2
+3
+$2y$05$4./ppbmiGYjg3XQqJQrQqe6jp3nhR.2W/fkncOVAUZd5M7vOTfYi2:SKY-TEST-4990
+$2y$05$GAwb9NeYRburDXjp3UDz7u60tmAPPE4e1YbA5G0MCcuPuVaQMP9KK:SKY-TEST-7365
+$2y$05$6kYkZrD8gLvA8264S.jluOIGadDcqKZO4B6G379Qq9kRiYTxCt.Z6:SKY-TEST-1858
+Even with a relatively secure algorithm, patterned passwords aren’t secure.

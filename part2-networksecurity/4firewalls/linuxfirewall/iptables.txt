@@ -1,0 +1,97 @@
+sudo iptables -L
+shows the list of chains and rules
+
+3 default chains
+INPUT - Controls inbound connections
+e.g ping to our device
+connect to our device for file share etc.
+
+
+
+FORWARD also used for controlling inbound connections
+forwarded onto another device, and not to our device
+this forwards traffic.
+
+
+OUTPUT - outbound connections
+surf web
+enable ports etc.
+
+chains have default behaviour called default policies.
+
+
+starts from the top and goes through each rule until it matches , else it applies default policy.
+
+drop means no request sent back from / to source.
+packet will be dropped
+
+accept
+
+iptables -F ( flush all the rules )
+
+
+make default rules for each of the chains
+
+we can do it like this : 
+
+iptables -P INPUT DROP
+iptables -P INPUT ACCEPT
+
+
+if we want device to only browse the network through browser. then what we can do is drop policy on all the three chains
+sudo iptables -P INPUT DROP
+sudo iptables -P FORWARD DROP
+sudo iptables -P OUTPUT DROP
+
+
+-A is append , -i is interface , lo is local interface , -j is jump switch , jump to target action matching that rule
+
+sudo iptables -A INPUT -i lo -j ACCEPT
+
+sudo iptables -L -v - verbose listing
+
+sudo iptables -L -v --line-number -n
+
+shows numbers instead of names.
+
+ 
+sudo iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+INBOUND DYNAMIC PACKET FILTERING RULE
+append to input chain , -m loads a module called state module, examine state of packet and determine if it is new (incoming new connections not initiated by system),
+ established or related (incoming packets part of already established connection )
+ 
+to enable dynamic packet filtering.
+ 
+ 
+sudo iptables -A OUTPUT -o lo -j ACCEPT
+allow all outgoing packets destined for localhost be allowed and accepted.. requires localhost adapter. lo
+
+
+sudo iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+outbound traffic DYNAMIC PAKCET FILTERING RULE
+
+
+if we want to browse network
+we have to add these rules :
+
+sudo iptables -A OUTPUT -o eth0 -p udp -m udp --dport 53 -j ACCEPT 
+
+keep TRACKKKK OF THE DOUBLE DASHEESSS
+
+
+enable dns queries.
+
+
+sudo iptables -A OUTPUT -o eth0 -p tcp -m tcp --dport 80 -m state --state NEW -j ACCEPT
+
+port 80 http port , dynamic packet filter , state as new
+
+
+sudo iptables -A OUTPUT -o eth0 -p tcp -m tcp --dport 443 -m state --state NEW -j ACCEPT
+
+
+sudo iptables -S
+
+
+
+

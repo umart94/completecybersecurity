@@ -1,0 +1,26 @@
+we make virtual machines and then add virtual disks to it
+
+in this case we want to be able to boot a os in live mode
+so that no data is persisted on disk
+
+we can create virtual disk with it as well (if we want)
+
+
+
+in vmware or virtualbox, create a new template.
+select the os type from iso file
+when creating a virtual machine , select do not add a virtual disk
+
+live os can be persistant or non persistant
+
+non-persistance - changes not retained
+
+we can use usb with write locks.
+
+
+
+
+sd cards
+secure encrypted usbs
+aegis secure key 3.0
+ironkey imation

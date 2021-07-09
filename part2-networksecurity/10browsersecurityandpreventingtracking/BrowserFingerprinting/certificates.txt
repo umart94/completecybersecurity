@@ -1,0 +1,15 @@
+HTTPS everywhere.
+ssl observatory.
+
+certificate patrol
+perspectives - network notary.
+calomel ssl validation
+cipherfox
+toggle cipher suites.
+
+firefox
+
+about:config
+
+privacy settings
+random agent spoofer.

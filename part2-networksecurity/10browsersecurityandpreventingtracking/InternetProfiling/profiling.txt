@@ -1,0 +1,15 @@
+anyone with access to large amount of internet traffic
+can create internet usage profiles for every user they can see.
+
+for every service
+
+collect all these things
+cookies
+supercookies
+ips
+fingerprint of browsers
+metadata
+identifying indicators.
+
+presence events
+

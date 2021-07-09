@@ -1,0 +1,14 @@
+disable remove or limit
+
+1. java
+2. flash
+3. silverlight
+
+disable javascript
+disable browser applications like pdf readers.
+
+when we go to websites with scripts added, ( called hooks)
+
+these popup on screen to ask to install a plugin.
+
+after we install that plugin, that browser is hacked.

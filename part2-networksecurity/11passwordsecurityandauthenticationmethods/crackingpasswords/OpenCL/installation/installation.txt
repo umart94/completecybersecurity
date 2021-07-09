@@ -1,0 +1,41 @@
+1. Intel Graphics Driver. - latest versions. - installed
+2. NVIDIA DRIVER - from nvidia - installed
+3. Visual Studio 2019 - for compiling cuda code - installed
+4. OpenCL SDK - from intel website - requires license for intel c++ compiler.
+All tools are fully functional without a license except the Intel C++ Compiler, which requires a license file. A license file can be installed later if required.
+
+this will install OpenCL Tools.
+Intel code builder for open cl api 2020
+
+will show 100 % , dont cancel. wait for it to complete.
+
+
+5. OpenCL Runtime - from intel website > 16.0 version
+ Intel HD drivers and CPU-only runtime
+Recent versions of the Intel HD Graphics drivers now include the Intel OpenCL CPU-only runtime during their installation/upgrade. The OpenCL runtime version provided through the graphics drivers is also more recent than the one available as stand-alone download from the Intel website or proposed by SARscape during the installation process.
+Unfortunately, it seems that the Intel HD driver installation will not check for the presence of an already installed stand-alone version of the OpenCL CPU-only runtime, which leaves the runtime in a corrupted, non operational state (see the related discussion on the Intel forum).
+
+Workaround
+At the moment, the following procedure should fix the problem. Please be aware that this procedure requires the reinstallation of the Intel graphics drivers, which can leave your computer in an unusable state if not done correctly.
+Uninstall the Intel OpenCL CPU-only runtime from your computer (you can do this through control panel>programs>uninstall a program).
+Download the proper Intel HD Graphics driver from the Intel website. Make sure to download the driver as .zip instead of .exe.
+Follow these guidelines to (re)install the updated Intel graphics driver.
+In addition to the latest version of the Intel HD Graphics driver, you should now also have a newer version of the OpenCL CPU-only runtime (probably version 5.2.* or higher).
+
+
+
+the OpenCL RUNTIME IS CPU ONLY !
+THE GRAPHICS DRIVER IS CPU + GPU , AND IT IS UPDATED VERSION OF OPENCL RUNTIME.
+
+
+
+6. CUDA TOOLKIT - from nvidia
+this will replace the gameready and other drivers, with the cuda driver.
+will take a lot of time to install.
+
+
+
+7. Windows 10 SDK, version 2004 (10.0.19041.0)	
+Released in conjunction with Windows 10, version 2004.
+
+8. Intel System Studio with OpenCL enabled. - for compiling cross platform apps

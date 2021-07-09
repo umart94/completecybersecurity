@@ -1,0 +1,58 @@
+2fa dongles
+hard tokens
+http://www.digiflak.com/
+https://www.nitrokey.com/
+https://www.onespan.com/
+https://www.wwpass.com/
+
+
+u2f is OATH standard
+FIDO standard
+
+hard tokens are connected tokens
+soft tokens are disconnected tokens
+
+yubico works with premium lastpass
+
+yubico supports NFC
+if we use it with an android phone that supports NFC
+we can swipe it, and we can get access using multifactor authentication.
+
+
+
+FIDO2 is an open authentication standard, hosted by the FIDO Alliance, that consists of the W3C Web Authentication specification (WebAuthn API), and the Client to Authentication Protocol (CTAP). CTAP is an application layer protocol used for communication between a client (browser) or a platform (operating system) with an external authenticator such as the YubiKey 5 Series, and the Security Key Series by Yubico. Yubico is a core contributor to the FIDO2 open authentication protocol.
+
+FIDO2 is an extension of FIDO U2F, and offers the same level of high-security based on public key cryptography. FIDO2 offers expanded authentication options including strong single factor (passwordless), strong two factor, and multi-factor authentication. With these new capabilities, the YubiKey can entirely replace weak static username/password credentials with strong hardware-backed public/private-key credentials. These credentials cannot be reused, replayed, or shared across services, and are not subject to phishing and MiTM attacks or server breaches.
+
+
+
+U2F is an open authentication standard that enables internet users to securely access any number of online services with one single security key instantly and with no drivers or client software needed.  FIDO2 is the latest generation of the U2F protocol.
+
+Click here for a list of featured services that use FIDO U2F.
+
+U2F was created by Google and Yubico, and support from NXP, with the vision to take strong public key crypto to the mass market. Today, the technical specifications are hosted by the open-authentication industry consortium known as the FIDO Alliance. U2F has been successfully deployed by large scale services, including Facebook, Gmail, Dropbox, GitHub, Salesforce.com, the UK government, and many more.
+
+
+U2F is stronger than OTP
+
+
+
+
+
+
+
+
+
+-----------------
+business users :
+RSA proprietary.
+hardware tokens
+software tokens
+
+RSA SecurID 800 Authenticator
+The gold standard in two-factor authentication
+
+we would also need an RSA server to use these.
+
+remote access into office.
+

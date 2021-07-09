@@ -1,0 +1,1 @@
+.\hashcat.exe -m 3200 -a 3 pattern-hashes.txt 'SKY-TEST-?d?d?d?d'

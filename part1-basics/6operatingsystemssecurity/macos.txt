@@ -1,0 +1,2 @@
+spotlight search - not private
+fix macos - net monitor

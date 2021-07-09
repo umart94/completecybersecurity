@@ -1,0 +1,6 @@
+make aliases
+create sub aliases
+fake alias linked with fake alias. linked with fake alias linked with..
+network of aliases.
+
+no cross correlation and cross contamination of aliases.

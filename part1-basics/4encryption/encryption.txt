@@ -1,0 +1,21 @@
+higher the bit size of key , more secure but takes longer to encrypt.
+
+symmetric - brute force attack - ophcrack software.
+des
+triple des
+blowfish
+rc4 , 5 ,6
+aes
+
+
+asymmetric -
+RSA
+Elliptic curve cryptosystem
+diffie hellman
+el gamal
+
+
+hybrid systems
+public and private keys to encrypt the system.
+and symmetric algorithms used to actually encrypt the data to be sent.
+

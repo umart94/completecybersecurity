@@ -1,0 +1,48 @@
+The Sec-Fetch-Dest fetch metadata header indicates the request's destination, that is how the fetched data will be used.
+
+Syntax
+Sec-Fetch-Dest: audio
+Sec-Fetch-Dest: audioworklet
+Sec-Fetch-Dest: document
+Sec-Fetch-Dest: embed
+Sec-Fetch-Dest: empty
+Sec-Fetch-Dest: font
+Sec-Fetch-Dest: image
+Sec-Fetch-Dest: manifest
+Sec-Fetch-Dest: nested-document
+Sec-Fetch-Dest: object
+Sec-Fetch-Dest: paintworklet
+Sec-Fetch-Dest: report
+Sec-Fetch-Dest: script
+Sec-Fetch-Dest: serviceworker
+Sec-Fetch-Dest: sharedworker
+Sec-Fetch-Dest: style
+Sec-Fetch-Dest: track
+Sec-Fetch-Dest: video
+Sec-Fetch-Dest: worker
+Sec-Fetch-Dest: xslt
+Sec-Fetch-Dest: audioworklet
+Sec-Fetch-Dest: audioworklet
+
+
+Values
+audio
+audioworklet
+document
+embed
+empty
+font
+image
+manifest
+object
+paintworklet
+report
+script
+serviceworker
+sharedworker
+style
+track
+video
+worker
+xslt
+nested-document

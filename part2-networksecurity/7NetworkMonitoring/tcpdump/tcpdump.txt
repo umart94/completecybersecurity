@@ -1,0 +1,41 @@
+command line network analyzer linux
+
+
+1. GET all https traffic 
+
+sudo tcpdump -nnSX port 443
+
+2. get everything on an interface
+
+sudo tcpdump -i ens33
+
+
+sudo tcpdump -D
+lists all interfaces
+
+sudo tcpdump -n -i any dst port 80
+traffic on any interface for port 80
+
+
+sudo tcpdump -i ppp0 -vv ip6
+
+sudo tcpdump -i any port 53 or port 80 or port 443
+
+
+
+sudo tcpdump -i any host 192.168.100.123 and not src net 192.168.100/24
+
+look on all interfaces for this host
+
+we are not interested on any local traffic
+we only want the external traffic.
+
+
+
+we can create a wireshark type of capture file
+
+we use -s flag to capture full size bytes of the packets.
+-w means write to a file, but this will create a large capture file.
+sudo tcpdump -i any -s 65535 -w capturefile.cap
+
+

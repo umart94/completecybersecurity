@@ -1,0 +1,26 @@
+through wifi access points around you
+through the cellular network
+signal strength / your location / cell id.
+triangulation - strength between 3 points
+silent sms
+forward links
+install software / malware on mobile phone
+Cell ID
+next Cell id
+roundtrip time
+most accurate information ( gps coordinates )
+
+not available on usb
+
+android has platform location api
+
+hybrid system - such as google maps - that uses all these ( LOL !!! )
+
+
+switch off gps and location apps.
+
+mobile repeater o2 voda mini voice repeater
+o2 Vodafone Mini Voice Repeater Band 900
+Dual Band GSM 900 and 3G 2100
+Adjustable gain control up to 55dB
+Coverage up to 250 sq m

@@ -1,0 +1,44 @@
+seperate assets by level of importance.
+
+seperate volumes/ virtual machines for seperate types of data
+
+storage device like NAS
+
+file disk encryption
+seperate keys diffie hellman
+
+portable apps.
+pendrive apps.
+
+standalone applications
+dont require installations.
+use only 1 single file.
+
+use a Portable browser on a AEGIS SECURE KEY or any encrypted USB drive.
+
+or use browser on an encrypted hard disk volume...
+
+
+use Applications as a Service - on cloud using remote / cloud services.
+
+cloud browsers
+authentic8
+maxthon
+spikes airgap
+spoon.net browser sandbox.
+
+
+
+Remote connections : 
+
+CITRIX
+teamviewer
+vnc
+ssh
+Xen Server local to network, vm accesses browser.
+
+
+
+
+
+

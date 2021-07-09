@@ -1,0 +1,14 @@
+Apparmor
+script sandfox
+sandbox command in linux
+firejail
+trustedbsd
+
+
+
+macos
+
+sandbox
+sandboxd
+sandbox_init
+sandbox-exec

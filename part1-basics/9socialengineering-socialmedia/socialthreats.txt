@@ -1,0 +1,38 @@
+1.avoidance
+avoid using certain social media.
+
+
+2. compartmentalization
+buy aliases.
+
+create fake social ids.
+
+
+
+
+3. content
+carefully considered information against real identity.
+could reveal info
+
+download app
+register app under real identity
+default settings are revealing location
+
+4. audience
+based on trust on audience.
+privacy settings and configs to reduce audience.
+
+
+5. open
+using real identity to being transparent.
+
+
+6. custom
+combination of these strategies.
+
+
+
+https://diasporafoundation.org/
+https://www.gnu.org/software/social/
+https://friendi.ca/
+

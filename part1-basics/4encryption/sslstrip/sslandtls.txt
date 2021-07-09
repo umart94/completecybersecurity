@@ -1,0 +1,42 @@
+data integrity , message authentication codes.
+depends on cipher and client mitigations.
+provides end to end security services like confidentiality authentication integrity.
+
+a symmetric algorithm such as aes is used to encrypt data transmitted
+keys are generated uniquely for each connection
+based on negotiation at the start of the communication.
+
+message integrity checks
+TLS supports many methods.
+
+
+forward secrecy means that session keys wont be compromised even if server private key is compromised.
+unique session key for each session a user creates even compromise of a single session key will not affect any data
+
+
+if private key of server is compromised.
+it means all our previous communication wont be compromised and cannot be decrypted
+as we use diffie hellman to negotiate sessions keys used for only a short time..
+
+symmetric keys are used in encryption , these are quicker to work with than the private keys generation. for e.g diffie hellman.
+
+
+hashes and macs used for data integrity.
+
+
+compromised ssl tls
+
+BEAST
+CRIME
+POODLE SSLv3
+RC4
+FREAK
+Logjam
+
+https://github.com/mozilla/ssl-config-generator
+https://wiki.mozilla.org/Security/Server_Side_TLS
+
+https://ssl-config.mozilla.org/
+
+ssl config generator by mozilla - (cipher suite configs)
+https://weakdh.org/sysadmin.html

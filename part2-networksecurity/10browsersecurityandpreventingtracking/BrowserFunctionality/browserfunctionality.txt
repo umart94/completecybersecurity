@@ -1,0 +1,6 @@
+geolocation apis - gps
+https://browserleaks.com/
+
+send pings feature
+
+

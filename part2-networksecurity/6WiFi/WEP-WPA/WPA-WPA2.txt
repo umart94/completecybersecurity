@@ -1,0 +1,49 @@
+WPA Draft IEEE 802.1 i standard
+
+enhanced security
+it used TKIP encryption protocol
+temporal key integrity protocol
+
+
+
+RC4 - 128 bit per packet key
+
+resulting encryption key would be different for each and every frame
+
+wep key + iv value + mac address = new encryption key.
+
+iv length increased
+
+tkip is backward compatible with 802.11 standard
+
+works with wep by feeding it more keying material
+data to be used for generating new dynamic keys
+
+tkip provides a key mixing function
+
+provides rc4 algorithm provides a high degree of protection than wep
+
+sequence counter - relay attacks
+message integrity checks.
+
+An attack can be created against WPA(1), in the following case:
+ - usage of WPA(1) and TKIP
+ - the IPv4 network range is known by the attacker
+ - the rekeying (key change) duration is longer than 30 minutes
+ - the network supports 802.11e (Quality of Service) with 8 channels
+
+An attacker can detect an ARP packet thanks to its size. As the MAC address is in clear form, the attacker knows most of data (MAC + IPv4 range) which are encrypted in the ARP packet. To obtain the MIC, he can use a rarely used channel. The attacker can then send one packet to each of the 7 left channels.
+
+A vulnerability of the WPA TKIP protocol can therefore be used by an attacker to decode an ARP query and to inject 7 packets.
+
+result:
+
+decrypt arbitrary packets sent to the client
+malicious javascript injected.
+
+
+
+avoid using tkip
+
+only use tkip when we need backwards compatibility.
+

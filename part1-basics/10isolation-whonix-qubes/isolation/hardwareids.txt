@@ -1,0 +1,146 @@
+1. CPU - have no SOFTWARE READABLE SERIAL NUMBER
+
+we can only examine the model number..
+
+CPU-Z software
+
+Linux I-Nex
+
+
+Mac
+
+MacCPUID
+
+
+2. motherboards - unique system identifiers.
+
+SMBIOS
+
+wmic used to get this information. about devices on motherboard.
+
+wmic bios get name,serialnumber,version
+
+wmic csproduct get name,identifyingnumber,uuid
+
+
+DmiDecode for Windows
+
+
+sudo apt-get install -y dmidecode
+
+macosx brew install cavaliercoder/dmidecode/dmidecode
+
+
+
+for disk drive
+
+on windows : 
+
+dir
+
+shows volume serial number
+
+wmic diskdrive get serialnumber
+
+
+sudo lshw -class disk
+
+lsblk --nodeps -o name,serial
+
+
+# sudo apt-get install hdparm
+# sudo apt-get install smartmontools
+# sudo apt-get install lshw
+
+
+in mac
+
+system_profiler SPSerialATADataType
+
+the device manufacturer could link this serial number back to us.
+
+In terminal type:
+
+# hdparm -I /dev/sd? | grep 'Serial\ Number'
+EDIT: You can also use lshw or smartctl
+
+lshw
+
+# lshw -class disk
+
+smartctl
+
+# smartctl -i /dev/sda
+
+If you are missing those tools, just install following packages
+
+# apt-get install hdparm
+# apt-get install smartmontools
+# apt-get install lshw
+
+
+
+
+Device1 name and corresponding serial number:
+
+lsblk --nodeps -o name,serial
+output:
+
+NAME SERIAL
+sda  0000000012400917BA30
+sdb  0000000012400917BA96
+add -n if you don't want to print the header line:
+
+lsblk --nodeps -no name,serial
+output:
+
+sda  0000000012400917BA30
+sdb  0000000012400917BA96
+Pass device as argument to get only the serial number of a specific device:
+
+lsblk --nodeps -no serial /dev/sda
+output:
+
+0000000012400917BA30
+Keep in mind lsblk lists information about all available (or the specified) block devices. Now, for those who do not know what that last term means:
+In general, block devices are devices that store or hold data. Diskette drives, hard drives and CD-ROM drives are all block devices. But that's not a problem when using lsblk as you can simply add more columns e.g type (device type) and/or tran (device transport type) etc:
+
+lsblk --nodeps -no name,serial,type,tran
+sda  0000000012400917BA30     disk sata
+sdb  0000000012400917BA96     disk sata
+sr0  4B583242334C453233353320 rom  usb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VolumeID tool :
+https://docs.microsoft.com/en-us/sysinternals/downloads/volumeid
+
+chameleon
+
+seperate phone
+keep files seperate from vulnerable computers
+use offline storage plus cloud storage.
+
+use security tokens through hardware device usb keys.
+
+for e.g
+Nitrokey
+Yubico
+
+network isolation
+seperate geographical locations.
+
+
+
+

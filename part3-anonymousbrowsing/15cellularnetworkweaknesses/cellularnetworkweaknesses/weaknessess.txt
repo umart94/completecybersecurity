@@ -1,0 +1,27 @@
+mac addresses are given away
+
+jailbreak or root phones to change mac addresses
+
+mac randomization means 
+location , gps information
+leaks from apps and gps apps browsing
+
+3rd party apps that are vulnerable
+transmit that data over the internet 
+
+can be many apps
+
+https://theintercept.com/2014/08/25/icreach-nsa-cia-secret-google-crisscross-proton/
+
+CRISSCROSS/PROTON is a top-secret signals intelligence database system used by the Central Intelligence Agency (CIA), the National Security Agency (NSA), the Drug Enforcement Administration (DEA), and the Defense Intelligence Agency (DIA). Its existence was revealed in documents leaked by former NSA contractor Edward Snowden.[1]
+
+According to classified NSA documents published by The Intercept, CRISSCROSS was built in the early 1990s by the CIA and the DEA to store metadata about phone calls.[2] PROTON stores unique codes used to identify individual cellphones, location data, phone call records, text messages, passport and flight records, visa application information, as well as excerpts culled from CIA intelligence reports. In 2006, according to documents published by The Intercept, the NSA estimated that there were 149 billion phone records on PROTON.[1]
+
+CRISSCROSS was integral to the CIA's extraordinary rendition program during the George W. Bush Administration, which involved abducting terror suspects and flying them to secret "black site" prisons where they were sometimes tortured.[1][3] A document on CRISSCROSS, published by The Intercept, noted that the use of communications metadata "has been a contribution to virtually every successful rendition of suspects and often, the deciding factor."[4]
+
+
+https://lineageos.org/
+
+https://phone.docs.ubuntu.com/en/devices/
+
+https://replicant.us/

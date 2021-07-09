@@ -1,0 +1,46 @@
+opera
+safari
+internet explorer
+edge
+chrome
+firefox
+
+
+
+secure browsers
+aviator
+srware iron browser
+JonDoFox
+Tor
+Epic privacy browser
+Comodo browsers
+
+
+debian has iceweasel
+
+
+----------
+reduce browser attack surface.
+
+
+disable or limit 
+javascript
+java
+flash
+silverlight.
+browser applications
+pdf readers.
+
+browsers
+sandboxes
+browser profiles.
+containers.
+manage tabs in sandboxes.
+
+do not track
+tracking protection
+disconnect.me service.
+https://developers.google.com/safe-browsing/v4
+NoScript
+policeman addon
+

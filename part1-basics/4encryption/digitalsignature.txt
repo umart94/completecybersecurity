@@ -1,0 +1,13 @@
+hashed valuefixed length value encrypted with senders private key.
+provides authentication, non repudiation, integrity.
+
+used with software
+drivers
+certificates
+to show that all of these things are genuine and integrity is being maintained.
+
+if software is not digitally signed, then the OS will give a warning.
+
+
+Windows 10 has device guard technology
+encrypt and add digital signatures in emails.

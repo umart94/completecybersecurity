@@ -1,0 +1,11 @@
+Disable WebRTC in Firefox
+WebRTC in Mozilla Firefox is supported since Firefox 22, and it's enabled by default.
+
+To disable RTCPeerConnection and protect IP addresses leakage, go to about:config and toggle media.peerconnection.enabled to false.
+
+To disable Media Devices, toggle media.navigator.enabled as well as media.peerconnection.enabled both to false.
+
+Disable WebRTC in Chrome
+WebRTC in Google Chrome and Chromium-based web browsers is supported and enabled by default since Chrome version 23.
+
+To protect IP addresses from leaking, using the official webrtc.org extension WebRTC Network Limiter. It has few options, depending on what you're looking for.

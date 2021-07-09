@@ -1,0 +1,8 @@
+1. use a valid email provider.
+2. use email filtering
+3. keep pgp email seperate from day to day use email.
+4. freeze accounts
+5. enable security notifications for account changes.
+
+
+

@@ -1,0 +1,106 @@
+seperate routable network for different devices for different levels of trust
+
+implemented by : 
+
+router
+firewall
+switch
+
+
+
+
+Network Design:
+
+1. DMZ
+192.168.1.0/24
+
+
+DMZ - 
+a network for devices that need port forwarding. that need inbound connections from the internet.
+
+connected directly to the Internet.
+this is vulnerable to attacks
+
+
+we only have to enable inbound connections here, this can be done through firewall , and block the outgoing connections
+
+so if attacker only compromises the inbound connection, attacker wont be able to make outbound connections and affect other devices on the network.
+
+for software updates, we might temporarily enable outbound connections.
+iptables, nat, routing ( having network not routable to other networks )
+
+
+
+
+
+2. Trusted VLAN
+192.168.2.0/24
+
+
+We will use trusted VLAN to administer the untrusted devices.
+
+
+enable connections from switch to firewall to DMZ, if we need to do administration on the DMZ device.
+
+VLANS used to isolate networks
+logical seperation of networks.
+
+USE tags included in the packets, e.g VLAN1, VLAN2 
+
+
+so they are on seperate vlans
+
+so man in the middle attacks can only be performed on a specific vlan, the other vlan tag would not get affected.
+
+so default gateway for each VLAN will be different.
+
+attacker would have no idea what the ipranges were and these networks even existed.
+
+
+
+We can even make it more secure by having 1 seperate VLAN for EACH device on the trusted vlan
+this is because devices on trusted vlan might simply not need to communicate with each other.
+
+
+
+
+3. Untrusted VLAN
+192.168.3.0/24
+
+
+the untrusted vlan would not be able to connect outbound to other devices and other networks.
+if its a TV, it would simply have internet access ( not network access )
+
+we can administer untrusted vlan from here.
+of ports
+firewall rules
+
+
+Attacks And Exploits on VLANS :
+VLAN Hopping
+MAC Flooding
+DTP
+STP
+HSRP
+
+
+in kali linux there is a tool called Yersinia , this does VLAN Hopping
+
+VLAN have been patched now
+
+
+this is only virtual isolation
+
+physical isolation is costly.
+this will mitigate arp attacks
+
+
+
+
+4. Untrusted Guest WiFi
+192.168.4.0/24
+
+
+5. Semi-Trusted WiFi
+192.168.5.0/24
+

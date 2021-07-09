@@ -1,0 +1,23 @@
+wep ON WiFi - cracked
+
+1. static encryption keys, no session keys , weak RC4 used , same password
+2. Lack of packet integrity assurance - Bits can be changed
+3. Ineffective use of initialization vectors, IVS not random enough, only 24 bits, IVS with the same key,
+crackable in seconds.
+
+IV is used to make sure patterns are not created
+
+if ivs are not used then 2 plaintexts will create 2 same ciphertexts. upon using an encryption algorithm
+
+IVS are not random enough
+
+Reused IVS with same key - cracked
+through
+packet injection.
+
+
+lack of packet integrity assurance
+same password is used in entire network.
+
+
+deprecation of WEP.

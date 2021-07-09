@@ -1,0 +1,43 @@
+1. if you didn't request it, don't click on it.
+2. never download and run any file that we don't 100 % trust.
+3. never enter sensitive information after following a link or popup.
+4. validate the link
+check for subdomains and misspelt domains
+check for idn homograph attack
+check for hidden urls.
+
+5.validate the sender
+6.check the domain name of the email address.
+
+
+
+
+
+https://www.urlvoid.com/
+Website Reputation Checker
+This service helps you detect potentially malicious websites.
+
+Check the online reputation/safety of a website.
+
+ Try the new URL Reputation API by APIVoid.
+
+
+minimize personal information disclosure.
+
+
+by using use parsemail.org
+
+we can copy and paste the Raw source of an email, and 
+it will display the source ip addresses and domains from which it originated.
+
+
+
+use whois domain lookup tools.
+
+lookup domains from reverse ip lookups..
+
+use online file scanners such as virustotal.com
+
+
+Validate the attachment.
+

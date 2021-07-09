@@ -1,0 +1,12 @@
+I2P Bote
+decentralized distributed email system
+multiple identities 
+no exposing of email metadata.
+
+end to end encrypted
+signed by sender private key.
+
+
+bit message
+confidant mail
+

@@ -1,0 +1,29 @@
+First of all, media device enumeration works only in Chromium-based web browsers since Chrome 30 or later.
+
+Device ID's — it's a unique identifiers of an audio/video devices installed in your system. Even if you have no camera/microphone, Chrome may detect more than one device, such as «Line In», «Aux», «CD Player», etc, depending on the system drivers.
+
+Full list of available media devices you can check in «chrome://settings/content ⇒ Media»
+
+Of course, Google Chrome does not allow foreign websites to see the actual Model ID of your hardware devices, instead it provides self-generated hashes. But at the same time, any website is allowed to take this fingerprints without user confirmation.
+
+How persistent and trackable these Device ID's?
+
+Well, for most users this ID's may remain unchanged for months.
+
+WebRTC Device ID is a HMAC of:
+
+Value of the "media":{"device_id_salt"} located in «Chrome\Data\profile\Preferences». Salt generates randomly at the Chrome's first launch. It's renew every time user doing «Clear browsing data ⇒ Cookies and other site and plug-in data». Also, Incognito Mode does not touch «device_id_salt», but generates its own salt for every session.
+
+Origin, aka «protocol://hostname:port». This dependence is not a problem for user tracking, script can be requested from constant host through iframe, and it will be same origin and same Device ID's on any domains.
+
+Raw Device ID of the physical device installed in your system.
+
+So, WebRTC Device Fingerprints persistent to:
+
+Changing ISP, IP address.
+Restarting browser, rebooting system.
+Clearing cookies and cache through third-party addons like EditThisCookie or CCleaner.
+WebRTC Device Fingerprints not persistent to:
+
+Clearing cookies through «chrome://settings/clearBrowserData».
+Using new session of Incognito mode.

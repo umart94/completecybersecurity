@@ -1,0 +1,29 @@
+https://cve.mitre.org/
+https://nvd.nist.gov/
+https://support.apple.com/en-us/HT201222
+
+
+App Store manages updates
+in its settings
+check : 
+automatically check for updates, 
+install app updates
+install OS X updates
+install system data files and security updates.
+
+
+macupdate software.
+
+brew.sh
+
+homebrew - missing package manager for OS X. (needs admin privileges.)
+
+brew search packagename
+brew install packagename
+brew update
+brew outdates
+brew upgrade packagename
+
+brew list
+
+

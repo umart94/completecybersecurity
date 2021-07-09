@@ -1,0 +1,14 @@
+when we install wireshark, it prompts for dumpcap
+we want to allow it and set it to yes ( allow non root users to be able
+to capture packets)
+
+See the answer from a duplicate post.
+
+You don't need to manually add the "wireshark" group; dpkg-reconfigure does it for you. Try removing the group (and your user from the group), run dpkg-reconfigure, add your user back to the group, and then, re-login. I verified these steps in Mint 12:
+
+$ sudo apt-get install wireshark
+$ sudo dpkg-reconfigure wireshark-common 
+$ sudo usermod -a -G wireshark $USER
+$ gnome-session-quit --logout --no-prompt
+
+restart ubuntu, wireshark will work.

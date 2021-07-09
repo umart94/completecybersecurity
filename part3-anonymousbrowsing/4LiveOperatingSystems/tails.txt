@@ -1,0 +1,25 @@
+configured to not use computer's hard disk instead it uses physical memory
+
+uses tor and i2p, mainly tor
+
+tails offers no resistance for :
+firmware rootkits
+or bios attacks.
+or hardware compromises
+or browser fingerprinting
+
+tails does not encrypt documents
+tails does not clear document metadata
+
+
+use pop instead of imap
+lack of isolation
+
+
+if tails gets compromised
+hardware serial numbers are compromised.
+
+
+
+
+

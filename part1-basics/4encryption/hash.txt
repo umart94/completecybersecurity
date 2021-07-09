@@ -1,0 +1,59 @@
+we need to authenticate the receiver
+we need to actually authenticate the PUBLIC KEY
+to authenticate the public key itself - we need hash functions and digital signatures.
+
+truecrypt - whole disk encryption technology.
+quickhash
+
+Tails OS.
+
+Tails, or The Amnesic Incognito Live System, is a security-focused Debian-based Linux distribution aimed at preserving privacy and anonymity.[5] All its incoming and outgoing connections are forced to go through Tor,[6] and any non-anonymous connections are blocked. The system is designed to be booted as a live DVD or live USB, and will leave no digital footprint on the machine unless explicitly told to do so. The Tor Project has provided financial support for its development in the beginnings of the project.[7] As of the latest version, Tails comes with Secure Boot.
+
+Bundled software
+GNOME desktop
+Networking
+Tor with: Stream isolation, regular, obfs3 and obfs4 bridges support[14].
+NetworkManager for easy network configuration
+Tor Browser, a web browser based on Mozilla Firefox and modified to protect anonymity with:
+Torbutton for anonymity and protection against JavaScript with all cookies treated as session cookies by default;
+HTTPS Everywhere transparently enables SSL-encrypted connections to a great number of major websites
+NoScript to have even more control over JavaScript
+uBlock Origin (formerly Adblock Plus) to remove advertisements.
+Note: Due to the fact that Tails includes uBlock Origin (compared to the normal Tor Browser Bundle), it could be subject to an attack to determine if the user is using Tails (since the userbase for Tails is less than the Tor Browser Bundle) by checking if the website is blocking advertising.[15] Although this can be avoided by disabling uBlock Origin.
+Pidgin preconfigured with OTR for end-to-end encrypted instant messaging
+OnionShare for anonymous File sharing
+Thunderbird email client with Enigmail for OpenPGP support
+Liferea feed aggregator
+Aircrack-ng for Wi-Fi networks auditing
+Electrum, an easy-to-use bitcoin client
+Encryption and privacy software
+LUKS and GNOME Disks to install and use encrypted storage devices, e.g. for USB sticks
+GnuPG, the GNU implementation of OpenPGP for e-mail and data encryption and signing
+Monkeysign, a tool for OpenPGP key signing and exchange
+PWGen, a strong random password generator
+Shamir's Secret Sharing using gfshare and ssss
+GNOME virtual keyboard as a countermeasure against hardware keyloggers
+MAT2 to anonymize metadata in files
+KeePassXC password manager
+macchanger for randomizing the device MAC address
+GtkHash to calculate checksums
+Keyringer, a command line tool to encrypt secrets shared through Git
+Paperkey, a command line tool to back up OpenPGP secret keys on paper
+Users can install any other software which is present in Debian GNU/Linux, either through APT (Tails provides three repositories) or dpkg.[16][17]
+
+One may choose among a large number of languages and keyboard layouts when the system is booted.
+
+
+
+
+
+
+
+
+
+but the website could be hacked . and the file could also be modified
+
+this is why we use digital signatures instead.
+
+
+ophcrack.

@@ -1,0 +1,28 @@
+ways we are tracked : 
+
+1. when we log into a website , our activities on that website are logged.
+2. websites on which we dont login, still track you.
+
+3rd party websites linked out from a website. will track you.
+
+Advertising Networks. like yahoo and google , ad providers.
+
+Email Provider. contacts, website we visit if they link back to them.
+
+ISP - DNS Queries. - log websites, dns queries.
+
+
+Telco - Cell Providers - also log information on geographical locations.
+
+Governments LEAs (law-enforcement-agencies) 
+
+Work - university schools. - log websites we visit, content of https
+proxies setup - run monitor program on machine. by placing trusted certificates on the computer.
+
+public shared wifi.
+
+man in the middle.
+
+access to machine.
+
+radio wifi or any rf transmission 3g 4g

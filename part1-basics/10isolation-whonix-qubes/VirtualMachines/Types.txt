@@ -1,0 +1,34 @@
+type 2
+virtual box
+vmware player ,workstation , fusion
+parallels desktop
+vagrant desktop
+vpc
+citrix desktopplayer.
+
+
+type1
+vmware esx/esxi
+oracle vm server
+microsoft hyperv
+xenserver
+
+
+
+hybrid hypervisors
+
+linux-kvm ( linux kernel virtual machine
+OpenVZ container based
+
+linuxcontainers
+
+freebsd - jails
+Oracle Solaris Zones
+Docker
+Turnkey linux plus cloud plus virtual server plus OpenVPN.
+
+
+
+
+
+

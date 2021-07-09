@@ -1,0 +1,17 @@
+dpkg -i file.deb
+
+sources.list
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt upgrade
+sudo apt-get dist-upgrade
+
+unattended upgrades ( for security in debian )
+
+sudo apt-get install unattended-upgrades
+
+sudo apt-get install apt-listchanges
+
+
+update all browser extensions
+

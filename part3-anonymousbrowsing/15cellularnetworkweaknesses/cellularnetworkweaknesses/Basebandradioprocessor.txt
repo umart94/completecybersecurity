@@ -1,0 +1,30 @@
+antenna radio functions
+firmware
+proprietary
+
+not security tested
+can be reverse engineered.
+
+can be used to access and modify data on the phone remotely.
+
+backdoor in baseband softwares.
+we cant trust phone hard ware  either.
+
+
+Developing Software for Symbian OS: A Beginner's Guide to Creating Symbian ...
+By Steve Babin
+
+baseband
+cdma
+tdma
+
+
+software updates can install malware.
+targets individual devices.
+
+keylogger
+
+wifi - access points can track us
+we send out a unique mac address observable in wireless signal
+
+android has randomized macs now

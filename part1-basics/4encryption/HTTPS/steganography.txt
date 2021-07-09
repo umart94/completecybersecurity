@@ -1,0 +1,10 @@
+hiding data inside text files / image files
+
+image file contains secret message.
+
+carrier file.
+video
+images
+audios
+
+OpenPuff

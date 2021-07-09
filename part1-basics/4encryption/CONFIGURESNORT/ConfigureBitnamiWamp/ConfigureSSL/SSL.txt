@@ -1,0 +1,127 @@
+we can use the development certificate
+we can use a free ssl provider e.g lets encrypt
+we can buy the ssl certificate ... send csr request.
+
+
+set OPENSSL_CONF=C:\Bitnami\wampstack-7.4.11-0\apache2\conf\openssl.cnf
+
+
+C:\Bitnami\wampstack-7.4.11-0\apache2\conf\openssl.conf
+
+
+
+
+
+openssl req -new -key server.key -out server.csr -config C:\openssl.cnf
+
+
+
+
+
+
+
+
+STEP 1 - Generate a new private key:
+
+Replace the installdir placeholder with the full installation directory for your Bitnami stack.
+openssl genrsa -out C:\Bitnami\wampstack-7.4.11-0\apache2\conf\server.key 2048
+
+
+STEP 2 - Create a certificate:
+
+Replace the installdir placeholder with the full installation directory for your Bitnami stack.
+openssl req -new -key C:\Bitnami\wampstack-7.4.11-0\apache2\conf\server.key -out C:\Bitnami\wampstack-7.4.11-0\apache2\conf\cert.csr
+
+
+
+
+STEP 3 - IMPORTANT: Enter the server domain name when the above command asks for the “Common Name”.
+
+Send cert.csr to the certificate authority. When the certificate authority completes their checks (and probably received payment from you), they will hand over your new certificate to you.
+
+Until the certificate is received, create a temporary self-signed certificate:
+
+Replace the installdir placeholder with the full installation directory for your Bitnami stack.
+openssl x509 -in C:\Bitnami\wampstack-7.4.11-0\apache2\conf\cert.csr -out C:\Bitnami\wampstack-7.4.11-0\apache2\conf\server.crt -req -signkey C:\Bitnami\wampstack-7.4.11-0\apache2\conf\server.key -days 365
+
+
+
+
+
+
+
+
+Back up your private key in a safe location after generating a password-protected version as follows:
+
+Replace the installdir placeholder with the full installation directory for your Bitnami stack.
+openssl rsa -des3 -in C:\Bitnami\wampstack-7.4.11-0\apache2\conf\server.key -out privkey.pem
+Note that if you use this encrypted key in the Apache configuration file, it will be necessary to enter the password manually every time Apache starts. Regenerate the key without password protection from this file as follows:
+
+Replace the installdir placeholder with the full installation directory for your Bitnami stack.
+openssl rsa -in privkey.pem -out C:\Bitnami\wampstack-7.4.11-0\apache2\conf\server.key
+
+-----------------------------------
+config.inc.php OF PHPMYADMIN
+/**
+ * Use SSL for connecting to MySQL server?
+ *
+ * @global boolean $cfg['Servers'][$i]['ssl']
+ */
+$cfg['Servers'][$i]['ssl'] = true;
+
+/**
+ * Path to the key file when using SSL for connecting to the MySQL server
+ *
+ * @global string $cfg['Servers'][$i]['ssl_key']
+ */
+$cfg['Servers'][$i]['ssl_key'] = 'C:\Bitnami\wampstack-7.4.11-0\mysql\data\client-key.pem';
+
+/**
+ * Path to the cert file when using SSL for connecting to the MySQL server
+ *
+ * @global string $cfg['Servers'][$i]['ssl_cert']
+ */
+$cfg['Servers'][$i]['ssl_cert'] = 'C:\Bitnami\wampstack-7.4.11-0\mysql\data\client-cert.pem';
+
+/**
+ * Path to the CA file when using SSL for connecting to the MySQL server
+ *
+ * @global string $cfg['Servers'][$i]['ssl_ca']
+ */
+$cfg['Servers'][$i]['ssl_ca'] = 'C:\Bitnami\wampstack-7.4.11-0\mysql\data\ca.pem';
+
+/**
+ * Directory containing trusted SSL CA certificates in PEM format
+ *
+ * @global string $cfg['Servers'][$i]['ssl_ca_path']
+ */
+$cfg['Servers'][$i]['ssl_ca_path'] = 'C:\Bitnami\wampstack-7.4.11-0\mysql\data';
+
+/**
+ * List of allowable ciphers for SSL connections to the MySQL server
+ *
+ * @global string $cfg['Servers'][$i]['ssl_ciphers']
+ */
+$cfg['Servers'][$i]['ssl_ciphers'] = null;
+
+/**
+ * MySQL 5.6 or later triggers the mysqlnd driver in PHP to validate the
+ * peer_name of the SSL certifcate
+ * For most self-signed certificates this is a problem. Setting this to false
+ * will disable the check and allow the connection (PHP 5.6.16 or later)
+ *
+ * @link https://bugs.php.net/68344
+ * @global string $cfg['Servers'][$i]['ssl_verify']
+ */
+$cfg['Servers'][$i]['ssl_verify'] = false;
+
+---------------------------------
+
+
+If your PHP install uses the MySQL Native Driver (mysqlnd), your MySQL server is 5.6 or later, and your SSL certificate is self-signed, there is a chance your SSL connection will fail due to validation. Setting this to false will disable the validation check.
+
+Since PHP 5.6.0 it also verifies whether server name matches CN of its certificate. There is currently no way to disable just this check without disabling complete SSL verification.
+
+Warning
+
+Disabling the certificate verification defeats purpose of using SSL. This will make the connection vulnerable to man in the middle attacks.

@@ -1,0 +1,29 @@
+1. network based firewall
+routes traffic through one network to another
+2 network connections on a minimum
+
+filter traffic between local network lan to internet ( outbound filtering ) - with network isolation
+
+they work at network and transport layer.
+firewall can be on router using iptables.
+
+custom firmware gives firewall with iptables.
+
+disadvantage is that malware simply used ports and protocols that were allowed to communicate out.
+
+2. host based firewalls installed on devices
+
+comodo firewall , windows firewall
+iptables - linux
+
+
+3.network or host based - virtual firewall
+
+e.g Zen Server - virtual machine acting as firewall
+
+laptop use virtual box with a pfsense vm to protect guest virtual machines.
+virtual firewall means we dont need a dedicated firewall.
+
+filter traffic on a vm
+
+use internal network pfsense

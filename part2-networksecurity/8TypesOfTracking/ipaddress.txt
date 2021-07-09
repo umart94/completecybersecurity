@@ -1,0 +1,4 @@
+any connection we make through ip address is logged and tracked.
+
+the only way to enforce security, is to enforce encryption on traffic going out from our computer.
+

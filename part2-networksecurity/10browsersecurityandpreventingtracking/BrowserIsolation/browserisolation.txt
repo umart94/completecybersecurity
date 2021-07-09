@@ -1,0 +1,16 @@
+https://www.authentic8.com/
+sandbox browsers.
+use browser profiles
+use portable browser apps.
+
+enable do not tracking - sets DNT flag to 1
+use tracking protection in private windows.
+
+http filtering
+uBlock Origin
+disconnect
+ghostery
+adblock plus
+privacy badger
+
+

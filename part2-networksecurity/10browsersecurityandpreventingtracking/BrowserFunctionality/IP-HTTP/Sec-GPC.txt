@@ -1,0 +1,14 @@
+The Sec-GPC header field is a mechanism for expressing the user's preference for a do-not-sell-or-share interaction in an HTTP request. At most one Sec-GPC header field can be present in a valid request.
+
+Sec-GPC-field-name  = "Sec-GPC"
+Sec-GPC-field-value = "1"
+A user agent MUST NOT generate a Sec-GPC header field if the user's Global Privacy Control preference is not enabled.
+
+A user agent MUST generate a Sec-GPC header field with a field-value that is exactly the numeric character "1" if the user's Global Privacy Control preference is set.
+
+EXAMPLE 1: Example GPC Request
+GET /something/here HTTP/1.1
+Host: example.com
+Sec-GPC: 1
+3.2.1 Extensibility of the Sec-GPC Field Value
+The Sec-GPC is deliberately defined without an extension mechanism. Experience with previous similar headers shows that people tend to rely on string equality instead of parsing the value when testing for their presence, especially when extensions do not yet exist. Such checks would of course fail in the presence of extension content, which would in turn render the mechanism moot. Should extensions prove necessary to this standard, they will need to be implemented through other headers, which may in time supersede this one.

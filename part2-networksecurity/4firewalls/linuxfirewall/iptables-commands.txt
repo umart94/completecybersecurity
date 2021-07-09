@@ -1,0 +1,70 @@
+sudo iptables -P INPUT DROP
+sudo iptables -P FORWARD DROP
+sudo iptables -P OUTPUT DROP
+
+sudo iptables -A INPUT -i lo -j ACCEPT
+
+
+sudo iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+sudo iptables -A OUTPUT -o lo -j ACCEPT
+
+
+sudo iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+sudo iptables -A OUTPUT -o eth0 -p udp -m udp --dport 53 -j ACCEPT 
+
+keep TRACKKKK OF THE DOUBLE DASHEESSS
+
+sudo iptables -A OUTPUT -o eth0 -p tcp -m tcp --dport 80 -m state --state NEW -j ACCEPT
+
+sudo iptables -A OUTPUT -o eth0 -p tcp -m tcp --dport 443 -m state --state NEW -j ACCEPT
+
+
+sudo iptables -S
+
+/sbin/iptables-save
+
+delete rules using line number
+
+
+sudo iptables -D OUTPUT 5
+
+
+-----------------------
+to
+remove all rules
+first change state from drop to accept.
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P FORWARD ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+
+then flush iptables
+
+sudo iptables -t nat -F
+sudo iptables -t mangle -F
+sudo iptables -F
+sudo iptables -X
+
+-X will delete any non default chains
+
+
+note that this will revert back to
+
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P FORWARD ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+
+which means that firewall is off..
+
+this was for ipv4 tables
+
+
+
+ipv6tables -L will show ipv6 firewall rules
+
+to disable ipv6
+
+sudo ip6tables -P INPUT ACCEPT
+sudo ip6tables -P FORWARD ACCEPT
+sudo ip6tables -P OUTPUT ACCEPT

@@ -1,0 +1,87 @@
+1. is there encryption in transit ?
+
+2. does it encrypt in a way so the provider can't read it ?
+Zero Trust Model
+
+3. can you verify contact's identities ? non repudiation authentication
+4. are past communications secure if your keys are stolen ( perfect forward secrecy )
+5. is the code open to independent review ?
+6. is the security design properly documented ?
+7. has there been any recent code audit ?
+
+SIGNAL
+CHATSECURE
+CRYPTOCAT
+RICOCHET
+OTHERS
+
+An End-to-End XMPP Cryptographic Protocol Desiderata
+This is an idea elb has been kicking around for a long time. This page does not represent due diligence on existing efforts; there may be a candidate protocol in the works that elb is simply not aware of. Compare-and-contrasts with existing protocols or protocol proposals are welcome.
+
+Rationale
+There are numerous end-to-end crypto protocols for IM, but they suffer from a myriad of flaws, or target a use case that I do not find ideal. Some of them are even very good at what they do. This protocol is not intended to supplant those that are very good at what they do, but to provide a specific, simple but secure user experience to encourage universal secure communications over XMPP.
+
+Some specific flaws I see in existing protocols that I would like to avoid are:
+
+Proprietary. This is an obvious non-starter; several protocols provide native e2e crypto facilities that are undocumented, require buy-in (or even authentication) from the provider, etc.
+Protocol-agnostic. While this is a feature in some sense, it is also limiting. OTR, for example, is a successful, portable, and secure protocol with many features going for it. However, its protocol agnosticism is both a strength and a weakness. It's great to be able to secure conversations over a variety of networks, both open and proprietary, but lack of protocol integration means that, for example, advertising OTR capability through XMPP presence is not supported. (To my knowledge, at least!)
+Reliance on SSL PKI. Similar to proprietary protocols, this is an obvious non-starter. Who trusts those guys?
+Limited third-party authentication functionality. Most or all existing protocols provide only limited support for authenticating an interlocutor's keys. In some cases the keys are used only for the protocol in question, and verification is provided only by the client itself. Some protocols use exclusively a specific third-party authentication mechanism (e.g., GPG or x.509 certificates with CA signatures).
+Desiderata
+I consider these features essential to a protocol that satisfies this call:
+
+Strong authentication. All data exchanged via the protocol should have strong authentication. Not all data may be encrypted, but all data should be authenticated.
+Perfect forward secrecy. Whether this is for all messages, each session, or exactly what level of granularity needs to be determined.
+Algorithmic flexibility. Cryptographic techniques evolve, computing power increases, and needs change. Some sort of algorithm naming protocol (such as used by TLS or PGP) is necessary for future-proofing and tailoring protection to the data being protected.
+XMPP Presence integration. This means that XMPP presence stanzas for a client supporting the protocol should provide, at a minimum:
+Notification that the client supports e2e encryption
+Public key material or equivalent information, or a method to retrieve it
+A cryptographically secured authentication mechanism for the above items (may, in this case, be a self-signature using the key material itself)
+There may be additional room for integration here; for example, authentication of the basic presence information is also desirable, but I do not consider it a strict requirement.
+
+Streamlined one-on-one Chat. An equivalent protocol to the XMPP simple <message> stanza with a cleartext <body>, only encrypted and authenticated. The point of this protocol is to minimize overhead for typical one-on-one chat, for the benefit of mobile and bandwidth- or computationally-constrained clients.
+Arbitrary protected stanzas. A method should be provided for protecting arbitrary end-to-end XMPP stanzas, either with only authentication or with both authentication and encryption. An example mechanism supporting this point would be an e2e encrypted data stanza simply containing a standard XMPP stanza that has been encrypted and authenticated that is unwrapped at the receiving client and then processed as if it had been in place of the encrypted stanza. Existing standards and best practices for encrypting partial XML documents should be consulted.
+Protected client-to-client communication. This must include file transfer, and ideally it would also include things like voice and video streams. Clients must provide notification to the user if a cleartext client-to-client channel is attempted during an otherwise secured session or when no session is currently present.
+A plurality of key authentication mechanisms. The public key exchange mechanism should allow for multiple disparate authentication methods to be communicated. For example, an S/MIME signature using a PKI x.509 certificate and a GPG signature of the same key material might be provided, along side whatever native signing protocol is used. These authentication mechanisms should be readily extensible and have enough structure that useful mechanisms can be clearly defined. Note that the client itself need not handle mechanisms it does not understand, but mechanisms should be designed such that the client can present the information to the user in a form that lends itself to validation -- e.g., a GPG signature might simply be presented as an ASCII armored text block.
+Opportunistic encryption. Indication of encryption and authentication capabilities should be provided in some way to clients who are not on our roster or who do not have us in their roster, so that encryption may be used opportunistically. This should include a way to exchange keys and key authentication materials. Some sort of access control may be required to prevent automated exchanges from becoming a DoS or privacy attack vector.
+Other Considerations
+It may be desirable to design the protocol such that the primary key material can be managed through an interface like that provided by ssh-agent. (Not ssh-agent itself, as I believe it handles only signatures.) IM clients are large and complicated applications with fairly large network-exposed surfaces; protecting the primary key material itself provides some defense against exploits in the client.
+
+Relevant Protocols
+OTR: ​https://otr.cypherpunks.ca/Protocol-v3-4.0.0.html
+The gold standard in open IM encryption protocols. There's plenty to learn here. I'm personally not interested in the non-repudiation aspect. Wholly protocol-independent, so does not provide any presence integration or protection of XMPP stanzas. Does include key authentication and negotation, opportunistic encryption, etc.
+
+OpenPGP on Jabber: ​https://xmpp.org/extensions/xep-0027.html
+Not exactly a standardized protocol, per se, so much as simply documentation of existing clients. Provides a mechanism for both authenticating and encrypting certain stanzas. Does not provide key exchange or presence integration.
+
+XMPP XTLS: ​https://tools.ietf.org/id/draft-meyer-xmpp-e2e-encryption-02.txt
+Provides e2e encryption between XML endpoints over Jingle. Appears to be a dead effort.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Signal protocol
+
+The protocol combines the Double Ratchet algorithm, prekeys, and a triple Elliptic-curve Diffie–Hellman (3-DH) handshake,[5] and uses Curve25519, AES-256, and HMAC-SHA256 as primitives.[6]
+
+
+Kontalk
+
+
+linphone
+jitsi.org
+toxchat
+gnu jami
+
+

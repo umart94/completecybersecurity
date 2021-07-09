@@ -1,0 +1,4 @@
+reverse shell connection is needed for outbound connection so adversary can control the malware on device.
+
+wont attempt to make inbound connections ( NAT blocks them and firewalls have rules )
+

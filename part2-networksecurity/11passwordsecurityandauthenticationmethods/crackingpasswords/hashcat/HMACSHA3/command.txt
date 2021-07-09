@@ -1,0 +1,1 @@
+.\hashcat.exe -m 1760 -a 0 hmac-sha512.txt plaintextpasswordlist.txt

@@ -1,0 +1,17 @@
+The Sec-Fetch-Mode fetch metadata header indicates the request's mode.
+
+Syntax
+Sec-Fetch-Mode: cors
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Mode: nested-navigate
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Mode: same-origin
+Sec-Fetch-Mode: websocket
+
+Values
+cors
+navigate
+nested-navigate
+no-cors
+same-origin
+websocket

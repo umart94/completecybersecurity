@@ -1,0 +1,25 @@
+On Linux and OSX you can achieve this by running tcpdump over ssh and having wireshark listen on the pipe.
+
+Create a named pipe:
+
+$ mkfifo /tmp/remote
+
+Start wireshark from the command line
+
+$ wireshark -k -i /tmp/remote
+
+Run tcpdump over ssh on your remote machine and redirect the packets to the named pipe:
+
+$ ssh root@firewall "tcpdump -s 0 -U -n -w - -i eth0 not port 22" > /tmp/remote
+
+Source: http://blog.nielshorn.net/2010/02/using-wireshark-with-remote-capturing/
+
+
+
+
+
+sudo ssh root@192.168.100.1 -- "tcpdump -w - -s 65535" 'not port 22' " > capture.pcap
+
+capture the file via ssh
+save the file remotely.
+

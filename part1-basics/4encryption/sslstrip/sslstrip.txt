@@ -1,0 +1,133 @@
+sslstrip is a MITM tool that implements Moxie Marlinspike's SSL stripping 
+attacks.
+
+It requires Python 2.5 or newer, along with the 'twisted' python module.
+
+Installing:
+	* Unpack: tar zxvf sslstrip-0.5.tar.gz
+	* Install twisted:  sudo apt-get install python-twisted-web
+	* (Optionally) run 'python setup.py install' as root to install, 
+	  or you can just run it out of the directory.  
+
+Running:
+	sslstrip can be run from the source base without installation.  
+	Just run 'python sslstrip.py -h' as a non-root user to get the 
+	command-line options.
+
+	The four steps to getting this working (assuming you're running Linux) 
+	are:
+
+	1) Flip your machine into forwarding mode (as root):
+	   echo "1" > /proc/sys/net/ipv4/ip_forward
+
+	2) Setup iptables to intercept HTTP requests (as root):
+	   iptables -t nat -A PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-port <yourListenPort>
+	
+	3) Run sslstrip with the command-line options you'd like (see above).
+
+	4) Run arpspoof to redirect traffic to your machine (as root):
+	   arpspoof -i <yourNetworkdDevice> -t <yourTarget> <theRoutersIpAddress>
+	   
+	   
+	   
+	   
+	   
+	   
+	   always use https
+	   always use encrypted tunnel
+	   vpn or ssh.
+	   IPSec
+	   SSL / HTTPS
+	   do not connect to untrusted access points.
+	  
+http://sniffdet.sourceforge.net/docs.html
+
+ossec
+sagan
+Open WIPS-NG
+Fail2Ban
+Zeek
+
+
+Intrusion Detection Systems for Unix
+To restate the information in the table above into a Unix-specific list, here are the HIDS and NIDS you can use on the Unix platform.
+
+Host intrusion detection systems:
+
+CrowdStrike Falcon
+EventLog Analyzer
+OSSEC
+Sagan
+AIDE
+Samhain
+Fail2Ban
+Network intrusion detection systems:
+
+Snort
+Zeek
+Suricata
+Sagan
+Intrusion Detection Systems for Linux
+Here are lists of the host intrusion detection systems and network intrusion systems that you can run on the Linux platform.
+
+Host intrusion detection systems:
+
+CrowdStrike Falcon
+EventLog Analyzer
+OSSEC
+Sagan
+Security Onion
+AIDE
+Samhain
+Fail2Ban
+Network intrusion detection systems:
+
+Snort
+Zeek
+Suricata
+Sagan
+Security Onion
+Open WIPS-NG
+Intrusion Detection Systems for Windows
+Despite the popularity of Windows Server, the developers of intrusion detection systems don’t seem to be very interested in producing software for the Windows operating system. Here are the few IDSs that run on Windows.
+
+Host intrusion detection systems:
+
+SolarWinds Security Event Manager
+EventLog Analyzer
+OSSEC
+Network intrusion detection systems:
+
+SolarWinds Security Event Manager
+Snort
+Suricata
+Intrusion Detection Systems for Mac OS
+Mac owners benefit from the fact that Mac OS X and macOS are both based on Unix and so there are far more intrusion detection system options for Mac owners than those who have computers running the Windows operating system.
+
+Host intrusion detection systems:
+
+CrowdStrike Falcon
+EventLog Analyzer
+OSSEC
+Sagan
+AIDE
+Samhain
+Fail2Ban
+Network intrusion detection systems:
+
+Zeek
+Suricata
+Sagan
+
+
+
+
+
+enable hsts strict transport security
+special response header ... only accept https traffic.
+
+
+so even if we try to ssl strip ... connection would get BLOCKED.
+
+second option is to use Virtual Lans.
+network isolation.

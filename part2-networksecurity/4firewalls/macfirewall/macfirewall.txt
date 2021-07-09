@@ -1,0 +1,78 @@
+security and privacy - firewall
+switch on
+firewall options
+
+no monitoring
+no blocking outgoing connections in the default firewall
+
+add applications to firewall.
+
+allow or block..
+
+-----------------------------
+
+Application Firewall
+
+cat /usr/libexec/ApplicationFirewall/com.apple.alf.plist | more
+
+
+sudo launchctl unload /System/Library/LaunchAgents/com.apple.alf.useragent.plist
+
+to stop the firewall
+
+sudo launchctl load /System/Library/LaunchAgents/com.apple.alf.useragent.plist
+
+
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw -h
+
+------------------
+
+packetfilter - BSD licensed stateful packet filter.
+
+sudo nano /etc/pf.conf
+
+anchors
+collection of rules and tables
+
+load anchor files
+
+pfctl
+
+sudo pfctl -sr
+sudo pfctl -si
+sudo pfctl -sa
+
+
+
+--------------
+
+
+sudo pfctl -v -n -f /etc/pf.conf
+
+sudo pfctl -e
+
+
+sudo pfctl -f /etc/pf.conf
+
+
+application firewall and pf firewall work together
+
+sudo nano /etc/pf.anchors/org.nathan.pf.rules
+sudo nano /etc/pf.anchors/com.apple
+
+
+application firewall enables pf firewall by 
+
+sudo pfctl -e
+
+in addition to its own rules
+
+application firewall will generate its own rules for pf through anchor points.
+
+
+
+sudo pfctl -a com.apple/250.ApplicationFirewall -s rules
+
+
+
+

@@ -1,0 +1,7 @@
+firewalls work on network and transport layers
+to accept and reject traffic based on port, protocol and address 
+
+
+advanced firewalls work on layer 7 to carry out deep packet inspection
+generally dedicated hardware firewalls
+protocol and port based rules.

@@ -1,0 +1,106 @@
+NVIDIA GPUs require "NVIDIA Driver" (440.64 or later) and "CUDA Toolkit" (9.0 or later)
+
+download using nvidia driver geforce experience
+
+
+Intel CPUs require "OpenCL Runtime for Intel Core and Intel Xeon Processors" (16.1.1 or later)
+
+https://software.intel.com/content/www/us/en/develop/articles/opencl-drivers.html
+
+https://software.intel.com/content/www/us/en/develop/tools/opencl-sdk.html
+
+The OpenCL™ platform is the open standard for general-purpose parallel programming of heterogeneous systems. It provides a uniform programming environment that's used to write portable code for client PCs, high-performance computing servers, and embedded systems that leverage a diverse mix of:
+
+Multicore CPUs
+Graphic processors
+FPGAs
+Other parallel processors and coprocessors
+The OpenCL Platform Working Group (led by the Khronos Group*) defines this standard.
+
+Built for usability and performance, the 2.1 version of the OpenCL standard is a significant evolution.
+
+Additional subgroup functionality
+Ability to copy kernel objects and states
+Ingest SPIR-V* code by runtime
+Deploy priority hints for queues
+All 7th generation and newer Intel® processors with integrated Intel® Graphics Technology support this version.
+
+
+
+
+we need
+opencl sdk
+opencl runtime
+
+Latest version of the SDK: Download | Instructions
+Runtimes for the CPU and GPU: Download
+
+
+
+
+
+
+
+
+
+OpenCL SDK 
+NVIDIA DRIVER
+CUDA TOOLKIT
+OpenCL Runtime
+Visual Studio 2019
+Intel System Studio with OpenCL enabled.
+Intel Graphics Driver.
+
+
+
+
+
+Intel UHD is a brand that Intel uses for some integrated graphics systems.
+
+DCH stands for Declararative, Componentized, Hardware Support Apps, and is a type of driver package that Microsoft designed for Windows 10. Intel releases DCH drivers alongside standard drivers for different tyoes of hardware, including UHD graphics.
+
+Windows DCH Drivers are driver packages that will install and run on Universal Windows Platform (UWP) based editions of Windows® 10.
+
+
+
+
+mainly , the nvidia latest driver is required
+then install the opencl sdk
+then install opencl runtime
+
+Intel® Graphics Compute Runtime for OpenCL™ Driver is included with the Intel® Graphics Driver package for Windows* OS.
+
+we need to install
+Intel® Graphics - Windows® 10 DCH Drivers
+
+this will install opencl runtime.
+Description:
+This download installs the Intel® Graphics Driver for 6th, 7th, 8th, 9th, 10th, & 11th generation, Apollo Lake, Gemini Lake, Amber Lake, Whiskey Lake, Comet Lake, and Lakefield.
+
+... because
+The graphics driver package is built in with Windows* 10 OS install. However, the built-in default deployment may not contain latest features.
+
+
+Intel® CPU Runtime for OpenCL™ Applications 18.1 for Windows* OS (64bit or 32bit)
+Download
+
+Size 60 MB
+CPU-only deployments should use the .msi installer linked in the Download button, and consider removal of the Intel® Graphics Technology drivers where applicable.
+CPU & Graphics deployments should use the Intel® Graphics Technology driver package, which contains both CPU (x86-64) and Intel® Graphics Technology implementations.
+See supported operating system details in the Release Notes
+Maintenance and updates are now provided in the Experimental Intel® CPU Runtime for OpenCL™ Applications with SYCL support implementation. This implementation is listed later in this article.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

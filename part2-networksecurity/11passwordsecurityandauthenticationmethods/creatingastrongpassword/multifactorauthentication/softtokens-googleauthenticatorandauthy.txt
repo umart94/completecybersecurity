@@ -1,0 +1,22 @@
+time based one time password TOTP soft token
+google authenticator
+authy
+
+soft token
+
+if a website conforms to OTP it will work with google authenticator
+as a 2fa, will work with any soft or hard token that supports OTP
+
+time based one time password
+one time password
+disconnected token
+
+
+authy
+authy has a lock on the mobile app
+authy also , can sync the OTP codes to cloud ( which is risky)
+
+but authy plus point is that we can set authy up on different devices.
+
+
+PHONE / sms verification as well.

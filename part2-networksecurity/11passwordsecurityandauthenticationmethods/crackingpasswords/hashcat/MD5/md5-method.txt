@@ -1,0 +1,29 @@
+download hashcat.7z
+extract
+go to folder where hashcat.exe is located
+
+our system must have OS and supported GPU.
+
+download wordlist
+paste it in folder with hashcat.exe file.
+
+press shift in the folder, then open powershell window here.
+
+this is the command for md5 password cracking
+
+hashcat uses the hash modes as command line parameter
+
+
+.\hashcat.exe -m 0 -a 0 hashes.txt rockyou.txt
+
+
+.\hashcat.exe: This is the path to the program that we’re running. In this case, we’re running hashcat.exe, which is located in the current folder (.\).
+
+
+-m 0 tells hashcat that it’s going to be cracking MD5 passwords. Hashcat assigns each supported algorithm a number that it calls a “hash mode”; since MD5 is so common for testing and practice, it was assigned 0. You can get a full list of hash modes from the hashcat website or by running .\hashcat.exe -h
+
+
+-a 0 tells hashcat that we’re just using a simple word list attack. There are other attack modes with varying degrees of complexity; you can get a full list by running .\hashcat.exe -h
+
+hashes.txt is the file that contains the hashes to be cracked, one per line.
+rockyou.txt is an attack-mode-specific parameter. Each attack mode typically takes one or two additional parameters that are specified after the hash file. Since we’re using a basic word list attack, we specify one additional parameter: the word list file.

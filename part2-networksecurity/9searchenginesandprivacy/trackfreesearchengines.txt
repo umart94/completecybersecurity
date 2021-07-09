@@ -1,0 +1,42 @@
+https://www.startpage.com/
+
+(built in proxy)
+
+prevents tracking
+cookies wont be stored on our browser, since the proxy uses another ip.
+
+https://duckduckgo.com/
+
+https://search.disconnect.me/
+
+
+https://yacy.net/
+
+decentralized distributed web search.
+YaCy is a free distributed search engine, built on principles of peer-to-peer networks. Its core is a computer program written in Java distributed on several hundred computers, as of September 2006, so-called YaCy-peers. 
+
+
+use yacy with anonymizers. ( its not private)
+
+https://metager.org/
+
+
+
+
+
+
+
+
+
+enable private browsing
+
+use https
+
+use privacy focused search engines (listed above)
+
+
+use hardened browser settings
+
+use anonymizing services like vpn , jondonym , tor etc.
+
+

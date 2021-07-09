@@ -1,0 +1,54 @@
+physically isolate.
+dedicated secure device as host for guest vm.
+seperate device for day to day uses.
+
+place vm on a seperate network
+virtual isolation via vlan
+
+virtual machine leaks
+
+unwanted log files
+disk caching
+
+
+use whole disk encryption on host.
+
+disable caching , paging ,swapping
+
+
+enable encryption on virtual / hypervisors.
+
+disable audio
+disable microphone
+disable shared folder
+disabled drag and drop
+video acceleration
+serial ports
+uninstall floppy cd dvd
+virtual disks removed
+disable usb
+
+use ps/2 mouse instead.
+disable remote server
+disable IO APIC and EFI
+Enable PAE/NX
+
+
+
+to avoid someone getting access to the physical hard drive use a live operating system.
+
+convert virtual disks to an iso and then boot from that ( use as live cd) )
+
+after you perform the activities create a snapshot.. once malware has arrived
+simply revert back to the previous most snapshot of the vm
+
+
+keep the operating systems either logged off or switched off..
+
+never keep them in sleep / hibernate / power saving modes.
+or else the encrypted keys and password will be cached/ stored on your disks.
+
+
+
+
+

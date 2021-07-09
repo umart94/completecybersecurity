@@ -1,0 +1,44 @@
+usually booted from external disk, cd ,dvd, usb,sd card
+live os booted in virtual machines as well.
+
+seperate security domain through isolation , also enables anonymity
+through anonymizing services.
+
+live operating systems :
+tails
+knoppix
+puppy linux
+JonDo / Tor-Secure-Live-DVD
+Tiny core linux
+windows live
+windows to go with ironkey
+lightweight portable security lps
+freepto
+subgraph os
+ubuntu privacy mix
+
+
+
+
+
+
+softwares to make bootable usbs:
+pendrivelinux
+rufus
+
+
+
+
+
+
+
+------------
+
+firmware rootkits
+bios attacks
+
+
+
+
+
+

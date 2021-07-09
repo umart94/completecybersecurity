@@ -1,0 +1,7 @@
+netfilter - userinterface
+iptables is interface
+
+packet is handed off to netfilter based on rules supplied by iptables.
+rules then work on network layer 3 and 4 transport layer
+
+

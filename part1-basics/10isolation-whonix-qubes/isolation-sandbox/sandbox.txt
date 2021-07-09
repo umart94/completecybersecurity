@@ -1,0 +1,20 @@
+security control
+isolation tool to prevent ,detect and mitigate threats.
+
+keep content confined to that container
+sandbox used for high risk apps
+such as browsers and email clients
+
+
+chrome
+firefox
+adobe reader use protected mode.
+
+
+bufferzone
+shadowdefender
+deepfreeze ( kernel level driver )
+faronics
+returnnilvirtualsystems
+bitdefender
+Sandboxie

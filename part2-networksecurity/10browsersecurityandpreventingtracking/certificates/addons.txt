@@ -1,0 +1,75 @@
+httpseverywhere - addon
+
+browser.urlbar.trimURLs - change it to false.
+
+decentralized notary - use addons in firefox to detect the certificate expiry
+ time left, will show notifications.
+
+
+we can use softwares to check fake certificates installed on any computer.
+
+( this will allow that 3rd party software to scan all the certificates)
+
+for e.g RCC 1.65.005
+
+Root certificates are a cornerstone of web security, a vital element in ensuring the sites you visit are who they claim to be.
+
+Windows ships with a lengthy list of known trusted certificates, but applications -- and malware -- can add more, and there’s no easy way to tell which are legitimate, and which might be a problem.
+
+RCC (Root Certificate Check) is a 48KB freeware application which scans the Windows and Firefox trusted certificate lists and highlights anything unusual.
+
+RCC is console-based, but easy to use: double-click it, and a few seconds later the program highlights certificates which aren’t part of the baseline trusted set. (The developer says it also considers "timestamp metadata", though we’re not sure what this involves.)
+
+This doesn’t mean the certificates are necessarily dangerous, just that they’ve been installed by some other application. For example, on our test system RCC listed certificates from Kaspersky, Bitdefender, BullGuard and "Disk Master" developer Chengdu QILING, but as these all related to packages we trusted, and had been installed on the computer, they weren’t a concern.
+
+If your system is different, and you see items you don’t recognize, you should research them further to try and understand why they might be installed.
+
+We launched the certificate manager (certmgr.msc), found and double-clicked the entry for Chengdu QILING (Trusted Root Certification Authorities\Certificates). This gave us information about the certificate, including a numeric ID -- 2.16.840.1.113733.1.7.23.3 -- we could search for online to gather more details. There’s a right-click Delete option to remove anything worrying.
+
+In Firefox, click Tools > Options > Advanced > Certificates > View > Authorities to see your certificates, and click "Delete or Distrust" to remove a selected item you’ve decided you don’t need.
+
+Keep in mind that deleting legitimate certificates can cause all kinds of odd problems: be very careful.
+
+Even if you delete something malicious, this may not completely solve the problem. If there’s active malware on your PC then it could reinstall the certificate later.
+
+Despite that, RCC does provide useful security information which you can’t easily get in any other way, and it’s worth having a copy around for your next security audit.
+
+RCC is a free application for Windows 7 and later.
+
+
+
+
+
+
+
+
+
+
+
+remove old cipher suites in the browsers.
+
+search about about:config settings in firefox.
+
+security and privacy related preferences
+
+the about protocol in firefox (other settings)
+
+firefox profilemaker.
+
+disable dom storage ( may cause websites to not work)
+disable search suggestions
+disable search keyword
+disable fixup urls
+
+
+disable webgl
+disable bloatware
+
+
+create a privacy focused firefox profile from verified websites.
+
+user.js hardening firefox profile.
+
+drop this file into firefox profile directory.
+settings take effect.
+test this profile.

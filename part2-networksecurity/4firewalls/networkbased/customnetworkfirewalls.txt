@@ -1,0 +1,16 @@
+OpenWRT
+
+dd-WRT
+
+firewall builder - 3rd party gui running on a PC.. for managing iptable rules on a router remotely via SSH
+
+
+
+pfSense open source firewall FreeBSD ( installed on PC )
+pfFirewall ( based on )
+opnsense.org
+smoothwall
+
+vyos.net
+Complete #opensource #linux-based network OS for routers and firewalls. Deploy in #bare-metal, #virtualized and #cloud environments
+

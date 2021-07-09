@@ -1,0 +1,18 @@
+perform wireless signal detection survey, identify boundaries.
+need portable wifi device
+find where we dont receive a signal
+
+limit the areas where we need the signal
+
+change the power output to reduce the range of the wifi
+change the antenna to directional antenna
+dampening materials.
+shiled electromagnetic fields blocking them in or out.
+curtains
+paints
+block mobile phone signal , am fm , bluetooth , frequency radiation and even microwaves.
+
+faraday rooms.
+
+faraday bags.
+

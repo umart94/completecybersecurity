@@ -1,0 +1,21 @@
+combine using pgp subkeys with using smartcards
+
+let you store the private keys on a tamper resistant piece of hardware
+
+gnupg asks these smart cards to perform crypto ops on its behalf without disclosing keys
+
+to prevent unauth use
+user provide pin / password to perform crypto operation.
+
+3 times - card blocked
+must be reset by admin pin
+if admin pin is incorrect 3 times
+
+card is inoperable
+factory default par reset krna parega.
+
+private subkeys on the smart card.
+
+the actual keys - primary keys are not on smart card
+
+OpenPGP Smart card

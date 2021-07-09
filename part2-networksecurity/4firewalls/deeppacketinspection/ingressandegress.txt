@@ -1,0 +1,19 @@
+I know that Ingress filtering is used to try and verify that a packet actually came from the ip address that it claims to have come from. But how is it possible to verify this when all you have is the packet?
+
+Ingress filtering verifies that the source IP address in the packet is on the list of allowed source IP addresses. It has no way to verify if the packet actually came from there or not.
+
+What are you checking against?
+
+It's checking the IP in the packet against the list maintained on the filter. If the filter only allows 192.168.1.0/24 source addresses, and a packet with a 172.16.1.23 source address arrives, it will not allow that packet in. On the other hand, a packet with a 192.168.1.45 source address will be allowed in.
+
+Perhaps an explanation of how ip address spoofing works would help.
+
+In IP spoofing, the client creates a packet with a bogus source address. When the filter looks at that packet, it will trust the source address it sees, and let it in. IP address spoofing is the method used to bypass ingress filtering. However, any responses to that packet will go, not to the malicious sender, but to the unsuspecting owner of that forged source address. This limits IP spoofing's usability to cases where
+
+You don't need a session of packets back and forth, or
+You control network infrastructure necessary to abuse that return path.
+You might want to read about the Mitnick Attack which is perhaps the most famous example of someone managing to spoof an address and make it work long enough to get something out of a session. In effect, he managed to fake a session with a forged source address by a) predicting the server's behavior that he couldn't see and b) suppressing the natural responses of the spoofed target to "unsolicited" packets.
+
+IP spoofing is most commonly seen with things like DDoS attacks, where the attackers will send spoofed packets because they don't care about a response - they're just trying to flood the victim with packets. Altering the source address makes it easier to disguise the source of the attack and harder to filter (as the spoofed address can change whenever it wants to).
+
+You will also see "Egress Filtering" mentioned - in the DDoS case, this means that when a cable modem user in Hoboken, New Jersey sends a packet out, his ISP will verify that it's using one of their addresses, and drop or block it if it isn't. If all the ISPs did Egress Filtering, then DDoS wouldn't be able to use spoofed addresses to confuse the defenders. Sadly, it falls under the category of "doing something right that benefits other people but not the person who has to do it," so it isn't as common as it should be.

@@ -1,0 +1,87 @@
+syslog used to monitor network
+a syslog process can run on a network device
+sends event messages to a logging server known as a syslog server / viewer
+provides information about network and device to a central location
+
+rfc5424
+
+
+
+
+log messages
+
+rsyslog - on linux
+open source
+
+syslog ng replaced with rsyslog
+
+sys log servers supported by lot of network devices
+
+syslog server listens on tcp port 514 and udp port 514
+tls port : 6514
+accessed through custom firmware on router dd-wrt
+
+
+it has 8 severity levels standardized levels and keywords
+
+syslog also has concept of facilities
+it is a way of categorizing messages ( of processes ) 
+
+when devices send a message to a syslog server it includes 1 of the standard
+facility values 
+
+for syslog, in linux ,there is a file called rsyslog.conf in etc.
+
+if we set level to debug, syslog will send us all messages for every
+single device, and log everything.
+
+in custom firmware of router dd-wrt for e.g we can enable and disable syslogd
+and set ip for remote server.
+
+also in firewall we can enable log levels and set options for dropped, rejected, accepted.
+
+goto router /syslog.asp
+this will show those messages.
+
+tail -f /tmp/var/log/messages
+
+this will display messages from command line when we connect to root user of router through command line
+
+and tail is option to constantly refresh it.
+
+ln -s /tmp/var/log/messages /tmp/www/log.html
+
+if we create a symbolic link to the syslog file and then
+map it to webserver root then we can see syslog file.
+
+syslogd -h
+
+
+if we have pfSense ( or an application firewall installed)
+
+we can go to status -> services -> system logs -> settings -> 
+
+here we can define upto 3 servers
+and in remote syslog content setting we can define which syslog messages we want to log: 
+
+everything
+system events
+firewall events
+dhcp service events
+portal auth events
+vpn (pptp , ipsec, openvpn events)
+gateway monitor events
+server load balancer events
+wireless events
+
+in mac there is syslog and in etc/asl.conf we have conf file.
+
+sudo tail -f /var/log/system.log
+
+console for macgui
+syslog server for windows
+
+logs are in raw format so we can get log analyzers.
+
+
+

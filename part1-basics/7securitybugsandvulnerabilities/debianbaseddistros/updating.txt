@@ -1,0 +1,95 @@
+debian website has a security advisories page, posted to debian-security-announce list.
+
+in debian dpkg
+
+dpkg is the software at the base of the package management system in the free operating system Debian and its numerous derivatives. dpkg is used to install, remove, and provide information about .deb packages. dpkg itself is a low-level tool
+
+
+go to directory where *.deb file is located, this is the software package.
+
+to use dpkg to install it, run 
+
+dpkg -i filename.deb
+
+this is manual installation.
+this is low level package management tool
+
+
+
+the high level package management tools are apt and aptitude.
+advanced packaging tool
+
+this is the command line front end for dpkg.
+
+sudo apt-get install packagename
+
+
+
+
+sudo aptitude install packagename
+
+
+sudo apt-get update
+used to synchronize package index files from the source.
+apt and aptitude make use of sources.list file
+package index locations are fetched from /etc/apt/sources.list file
+
+these are sources for the package
+
+
+sudo apt-get update
+sudo apt-get dist-upgrade
+this will upgrade the distribution, as well as intelligently handle the changing versions of packages with the upgrade.
+using conflict resolution system.
+it may remove , upgrade, downgrade some packages.
+
+
+
+
+sudo apt-get update
+sudo apt-get upgrade
+install newest versions of all packages installed on system from sources in
+sources.list
+
+before a dist-upgrade or upgrade, we need to run
+apt-get update.
+
+
+
+AutomaticUpdates
+AutomaticSecurityUpdates
+
+1. use gnome update manager
+2. use unattended-upgrades package
+3. write your own cron scropt that calls aptitude
+4. use cron-apt
+
+
+install unattended-upgrades
+
+sudo apt-get install unattended-upgrades
+
+then edit 10periodic file
+
+kdesudo gedit /etc/apt/apt.conf.d/10periodic
+
+APT::Periodic::Update-Package-Lists "1";
+APT::Periodic::Download-Upgradeable-Packages "1";
+APT::Periodic::AutocleanInterval "7";
+APT::Periodic::Unattended-Upgrade "1";
+
+
+
+
+
+
+
+
+we also need to edit the 50unattended-upgrades file
+
+
+kdesudo gedit /etc/apt/apt.conf.d/50unattended-upgrades
+
+
+
+

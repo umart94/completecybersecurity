@@ -1,0 +1,5 @@
+Disabling a rule means that the rule will no longer take effect. The block action refers to the behaviour of the rule itself...that is should it allow or block the traffic matched by that rule.
+
+So for example you can have a block rule that is preventing traffic, but you may want to temporarily allow that traffic for testing or other purposes, so you can select that rule and then disable it. Then if you want to reactivate the rule you can enable it again.
+
+As Ryan says below. Another concept that might help you understand is "default behavior" of inbound versus outbound rules. By default, Windows Firewall is configured to block incoming traffic by default, and allow outgoing traffic by default. So a "Block" rule typically isn't needed for inbound traffic, but you might want it if you're specifically targeting outbound traffic. Depends on the context.

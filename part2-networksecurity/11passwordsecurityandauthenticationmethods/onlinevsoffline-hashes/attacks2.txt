@@ -1,0 +1,160 @@
+rule based attacks
+The rule-based attack is one of the most complicated of all the attack modes. The reason for this is very simple. The rule-based attack is like a programming language designed for password candidate generation. It has functions to modify, cut or extend words and has conditional operators to skip some, etc. That makes it the most flexible, accurate and efficient attack.
+
+Why not stick to regular expressions
+Why re-invent the wheel? Simple answer: regular expressions are too slow. Typically we have to generate 1.000.000.000 (or more) fresh password candidates in less than 10 ms before hashing algorithms start to become idle, and then again and again, second after second. Just take a look at your GPU speed display to get an idea of it.
+
+Compatibility to other rule engines
+The rule-engine in Hashcat was written so that all functions that share the same letter-name are 100% compatible to John the Ripper and PasswordsPro rules and vice versa. Later we started to introduce some of our own functions that are not compatible. But these functions got their own letter-names to avoid conflicts.
+
+
+design rules to produce variants of words in dictionary and produce an output word.
+
+its like the word
+
+oreoshake
+OrEosHaKe
+oRe0$h@k3
+
+etc. ( leet speak, urban slang words.)
+
+
+
+
+we can analyze password patterns using the sprawl - pack.
+character set
+length
+password complexity
+
+
+create custom rules , if you know the source of the hashes
+
+scrape website, so that it is limited to that website domain..
+
+
+for e.g social websites
+
+leet speak
+
+@ndAYwA|a8uRg3r
+
+
+Markov chain applied to password cracking
+
+capital letters
+lower case letters
+symbols and numbers
+
+Password10!
+
+assign rules of patterns to the passwords
+
+
+
+cracking can be done online or offline
+
+online attacks, are where the attacker interacts with the actual system, as well as the attack files all on the internet..
+
+hydra
+Hydra is a pre-installed tool in Kali Linux used to brute-force username and password to different services such as ftp, ssh, telnet, MS-SQL etc. Brute-force can be used as a technique to try different usernames and passwords against a target to identify correct credentials.
+
+ssh logins
+website logins
+etc.
+
+Hydra Package Description
+Hydra is a parallelized login cracker which supports numerous protocols to attack. It is very fast and flexible, and new modules are easy to add. This tool makes it possible for researchers and security consultants to show how easy it would be to gain unauthorized access to a system remotely.
+
+It supports: Cisco AAA, Cisco auth, Cisco enable, CVS, FTP, HTTP(S)-FORM-GET, HTTP(S)-FORM-POST, HTTP(S)-GET, HTTP(S)-HEAD, HTTP-Proxy, ICQ, IMAP, IRC, LDAP, MS-SQL, MySQL, NNTP, Oracle Listener, Oracle SID, PC-Anywhere, PC-NFS, POP3, PostgreSQL, RDP, Rexec, Rlogin, Rsh, SIP, SMB(NT), SMTP, SMTP Enum, SNMP v1+v2+v3, SOCKS5, SSH (v1 and v2), SSHKEY, Subversion, Teamspeak (TS2), Telnet, VMware-Auth, VNC and XMPP.
+
+Source: https://www.thc.org/thc-hydra/
+THC-Hydra Homepage | Kali THC-Hydra Repo
+
+Author: Van Hauser, Roland Kessler
+License: AGPL-3.0
+Tools included in the hydra package
+hydra – Very fast network logon cracker
+root@kali:~# hydra -h
+Hydra v7.6 (c)2013 by van Hauser/THC & David Maciejak - for legal purposes only
+
+Syntax: hydra [[[-l LOGIN|-L FILE] [-p PASS|-P FILE]] | [-C FILE]] [-e nsr] [-o FILE] [-t TASKS] [-M FILE [-T TASKS]] [-w TIME] [-W TIME] [-f] [-s PORT] [-x MIN:MAX:CHARSET] [-SuvV46] [service://server[:PORT][/OPT]]
+
+Options:
+  -R        restore a previous aborted/crashed session
+  -S        perform an SSL connect
+  -s PORT   if the service is on a different default port, define it here
+  -l LOGIN or -L FILE  login with LOGIN name, or load several logins from FILE
+  -p PASS  or -P FILE  try password PASS, or load several passwords from FILE
+  -x MIN:MAX:CHARSET  password bruteforce generation, type "-x -h" to get help
+  -e nsr    try "n" null password, "s" login as pass and/or "r" reversed login
+  -u        loop around users, not passwords (effective! implied with -x)
+  -C FILE   colon separated "login:pass" format, instead of -L/-P options
+  -M FILE   list of servers to be attacked in parallel, one entry per line
+  -o FILE   write found login/password pairs to FILE instead of stdout
+  -f / -F   exit when a login/pass pair is found (-M: -f per host, -F global)
+  -t TASKS  run TASKS number of connects in parallel (per host, default: 16)
+  -w / -W TIME  waittime for responses (32s) / between connects per thread
+  -4 / -6   prefer IPv4 (default) or IPv6 addresses
+  -v / -V / -d  verbose mode / show login+pass for each attempt / debug mode
+  -U        service module usage details
+  server    the target server (use either this OR the -M option)
+  service   the service to crack (see below for supported protocols)
+  OPT       some service modules support additional input (-U for module help)
+
+Supported services: asterisk afp cisco cisco-enable cvs firebird ftp ftps http[s]-{head|get} http[s]-{get|post}-form http-proxy http-proxy-urlenum icq imap[s] irc ldap2[s] ldap3[-{cram|digest}md5][s] mssql mysql ncp nntp oracle-listener oracle-sid pcanywhere pcnfs pop3[s] postgres rdp rexec rlogin rsh s7-300 sip smb smtp[s] smtp-enum snmp socks5 ssh sshkey svn teamspeak telnet[s] vmauthd vnc xmpp
+
+Hydra is a tool to guess/crack valid login/password pairs - usage only allowed
+for legal purposes. This tool is licensed under AGPL v3.0.
+The newest version is always available at http://www.thc.org/thc-hydra
+These services were not compiled in: sapr3 oracle.
+
+Use HYDRA_PROXY_HTTP or HYDRA_PROXY - and if needed HYDRA_PROXY_AUTH - environment for a proxy setup.
+E.g.:  % export HYDRA_PROXY=socks5://127.0.0.1:9150 (or socks4:// or connect://)
+       % export HYDRA_PROXY_HTTP=http://proxy:8080
+       % export HYDRA_PROXY_AUTH=user:pass
+
+Examples:
+  hydra -l user -P passlist.txt ftp://192.168.0.1
+  hydra -L userlist.txt -p defaultpw imap://192.168.0.1/PLAIN
+  hydra -C defaults.txt -6 pop3s://[fe80::2c:31ff:fe12:ac11]:143/TLS:DIGEST-MD5
+pw-inspector – Reads passwords in and prints those which meet the requirements
+root@kali:~# pw-inspector
+PW-Inspector v0.2 (c) 2005 by van Hauser / THC vh@thc.org [http://www.thc.org]
+
+Syntax: pw-inspector [-i FILE] [-o FILE] [-m MINLEN] [-M MAXLEN] [-c MINSETS] -l -u -n -p -s
+
+Options:
+  -i FILE    file to read passwords from (default: stdin)
+  -o FILE    file to write valid passwords to (default: stdout)
+  -m MINLEN  minimum length of a valid password
+  -M MAXLEN  maximum length of a valid password
+  -c MINSETS the minimum number of sets required (default: all given)
+Sets:
+  -l         lowcase characters (a,b,c,d, etc.)
+  -u         upcase characters (A,B,C,D, etc.)
+  -n         numbers (1,2,3,4, etc.)
+  -p         printable characters (which are not -l/-n/-p, e.g. $,!,/,(,*, etc.)
+  -s         special characters - all others not withint the sets above
+
+PW-Inspector reads passwords in and prints those which meet the requirements.
+The return code is the number of valid passwords found, 0 if none was found.
+Use for security: check passwords, if 0 is returned, reject password choice.
+Use for hacking: trim your dictionary file to the pw requirements of the target.
+Usage only allowed for legal purposes.
+hydra Usage Example
+Attempt to login as the root user (-l root) using a password list (-P /usr/share/wordlists/metasploit/unix_passwords.txt) with 6 threads (-t 6) on the given SSH server (ssh://192.168.1.123):
+
+root@kali:~# hydra -l root -P /usr/share/wordlists/metasploit/unix_passwords.txt -t 6 ssh://192.168.1.123
+Hydra v7.6 (c)2013 by van Hauser/THC & David Maciejak - for legal purposes only
+
+Hydra (http://www.thc.org/thc-hydra) starting at 2014-05-19 07:53:33
+[DATA] 6 tasks, 1 server, 1003 login tries (l:1/p:1003), ~167 tries per task
+[DATA] attacking service ssh on port 22
+pw-inspector Usage Example
+Read in a list of passwords (-i /usr/share/wordlists/nmap.lst) and save to a file (-o /root/passes.txt), selecting passwords of a minimum length of 6 (-m 6) and a maximum length of 10 (-M 10):
+
+root@kali:~# pw-inspector -i /usr/share/wordlists/nmap.lst -o /root/passes.txt -m 6 -M 10
+root@kali:~# wc -l /usr/share/wordlists/nmap.lst
+5086 /usr/share/wordlists/nmap.lst
+root@kali:~# wc -l /root/passes.txt
+4490 /root/passes.txt

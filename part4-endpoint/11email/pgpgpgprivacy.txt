@@ -1,0 +1,62 @@
+we both have to have pgp
+and its software
+
+its complicated for public users
+
+openpgp alliance
+
+-----------------------------------------------
+
+1. OpenPGP Standard
+rcf 4880
+any software that implements pgp must be compatible with each other.
+
+symantec encryption
+Because traditional file transfer and email protocols often lack built-in security, many legacy systems are vulnerable to security breaches. Symantec Command Line Encryption protects critical data to ensure confidentiality and authenticity in trusted data transactions. Powered by PGP technology, it integrates easily into existing business processes and protects information on servers from unauthorized access.
+
+Secure data at rest, in motion, and in use
+Establish an enterprise-wide common encryption standard
+Use digital signatures to generate audit trails
+
+
+compatible with each other
+
+https://gnupg.org/
+
+The GNU Privacy Guard -FREE and Open Source
+GnuPG is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as PGP). GnuPG allows you to encrypt and sign your data and communications; it features a versatile key management system, along with access modules for all kinds of public key directories. GnuPG, also known as GPG, is a command line tool with features for easy integration with other applications. A wealth of frontend applications and libraries are available. GnuPG also provides support for S/MIME and Secure Shell (ssh).
+
+Since its introduction in 1997, GnuPG is Free Software (meaning that it respects your freedom). It can be freely used, modified and distributed under the terms of the GNU General Public License .
+
+The current version of GnuPG is 2.2.23. See the download page for other maintained versions.
+
+Gpg4win is a Windows version of GnuPG featuring a context menu tool, a crypto manager, and an Outlook plugin to send and receive standard PGP/MIME mails. The current version of Gpg4win is 3.1.13.
+
+Reconquer your privacy
+
+
+---------------------
+ITS NOT
+
+
+GPG KEYS
+PGP SIGNATURES
+
+ITS
+
+PGP KEYS
+PGP SIGNATURES
+
+
+private key - must not be shared
+public key - public
+public key placed on blog.
+
+plaintext encrypted with session key
+session key encrypted with public key
+ciphertext + encrypted session key
+
+
+recipient private key used to decrypt.
+
+

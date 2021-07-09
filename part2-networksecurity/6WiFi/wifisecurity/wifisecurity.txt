@@ -1,0 +1,67 @@
+kali linux
+compatible usb network adapter dongle device required to put it into monitoring mode
+
+Atheros AR9271
+
+CtrlFox Atheros AR9271 802.11n 150Mbps Wireless USB WiFi Adapter 3dBi WiFi Antenna Network Card for Windows 7/8/10 Kali Linux
+
+Ralink RT3070
+Ralink RT3070 150Mbps Mini USB 2.0 WiFi Wireless Network Card LED Indicator
+
+
+Ralink RT3572
+
+
+
+
+Realtek 8187L
+High Power USB Wifi Adapter with Realtek 8187l Chipset.Comes with 4dBi rubbber antenna. Dongle with SMA Rp Port. Compatible with 802.11b and 802.11g
+
+
+
+these work with kali
+
+Alfa network adatper cards
+tp link
+panda pau05
+
+
+usb network adapter cards.
+
+
+
+
+-------------------
+
+aircrack-ng ( 802.11 , wep , wpa , wpa2 pre shared cracking program , recover keys once enough data and packets are captured )
+
+cowpatty. ( offline dictionary attack against wpa and wpa2 )
+
+reaver ( bruteforce attack , wifi protected setup )
+
+fern wifi cracker
+
+we have to have a usb adapter
+
+there is a livecd , specifically for security wifi testing
+
+oswa assistant download.
+
+The OSWA-Assistant™ is a self-contained, wireless-auditing software toolkit for both IT-security professionals and End-users alike.
+
+
+This toolkit is squarely focused on wireless security/auditing only and, as the "Assistant" moniker implies, and is designed for the following groups of people:
+
+IT-security auditors and practitioners who need to execute technical wireless security testing against wireless infrastructure and clients;
+
+
+IT technical staff who have responsibility for ensuring the secure operation and administration of their organization's wireless networks;
+
+
+SME (Small & Medium Enterprise) and SOHO (SmallOffice-HomeOffice) businesses who do not have either the technical expertise or the resources to employ such expertise to audit their wireless networks;
+
+
+Non-technical-users who run wireless networks at home and who would like to audit the security of their wireless home networks and laptops but don't know how.
+
+
+

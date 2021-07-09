@@ -1,0 +1,42 @@
+GPG
+Enigmail
+Thunderbird
+ipgmail
+gpg4win
+
+android
+OpenKeyChain - easy pgp - the guardian project
+
+tails openpgp applet - inside os.
+
+For webmail + PGP
+mailvelope
+
+
+
+
+USE THUNDERBIRD LATEST version : 
+
+0. login to your account
+1. open pgp key manager
+2. generate an RSA key, with 4096 key size.
+3. set key expiry size.
+
+How can I export my secret or public key?
+Use the OpenPGP key manager, which you can find in the global Tools menu bar. Find the key that you would like to export and click it to select it. Then use the window's menu bar to open the File menu, and select either "Export public key" or "Backup secret key" depending on what you require. The OpenPGP key manager also allows you to export public keys of your correspondents.
+
+Alternatively, open Account Settings for the email account of your key that you want to export and select the End-to-End Encryption pane. Next to each personal key is a little small chevron, which you can click to open key details. Click the More button to open a list of possible actions. Select either "Export public key" or "Backup secret key".
+
+
+4. export public key to a file.
+5. backup secret key.
+
+key id
+fingerprint of public key
+
+composition and addressing
+choose plaintext ( uncheck compose messages in html format )
+display message as plaintext also
+ and uncheck allow remote content in messages
+ 
+ 

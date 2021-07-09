@@ -1,0 +1,77 @@
+PS D:\Softwares\Security\PasswordCracking\hashcat-6.1.1\hashcat-6.1.1> .\hashcat.exe -m 17600 -a 0 sha3.txt plaintextpasswordlist.txt
+hashcat (v6.1.1) starting...
+
+./OpenCL/m17600_a0-optimized.cl: Pure kernel not found, falling back to optimized kernel
+* Device #1: WARNING! Kernel exec timeout is not disabled.
+             This may cause "CL_OUT_OF_RESOURCES" or related errors.
+             To disable the timeout, see: https://hashcat.net/q/timeoutpatch
+* Device #2: WARNING! Kernel exec timeout is not disabled.
+             This may cause "CL_OUT_OF_RESOURCES" or related errors.
+             To disable the timeout, see: https://hashcat.net/q/timeoutpatch
+* Device #3: Unstable OpenCL driver detected!
+
+This OpenCL driver has been marked as likely to fail kernel compilation or to produce false negatives.
+You can use --force to override this, but do not report related errors.
+
+CUDA API (CUDA 11.1)
+====================
+* Device #1: GeForce GTX 1050, 1646/2048 MB, 5MCU
+
+OpenCL API (OpenCL 1.2 CUDA 11.1.114) - Platform #1 [NVIDIA Corporation]
+========================================================================
+* Device #2: GeForce GTX 1050, skipped
+
+OpenCL API (OpenCL 2.1 ) - Platform #2 [Intel(R) Corporation]
+=============================================================
+* Device #3: Intel(R) UHD Graphics 630, skipped
+
+./OpenCL/m17600_a0-optimized.cl: Pure kernel not found, falling back to optimized kernel
+Minimum password length supported by kernel: 0
+Maximum password length supported by kernel: 31
+
+Hashes: 3 digests; 3 unique digests, 1 unique salts
+Bitmaps: 16 bits, 65536 entries, 0x0000ffff mask, 262144 bytes, 5/13 rotates
+Rules: 1
+
+Applicable optimizers applied:
+* Optimized-Kernel
+* Zero-Byte
+* Not-Iterated
+* Single-Salt
+* Raw-Hash
+* Uses-64-Bit
+
+Watchdog: Temperature abort trigger set to 90c
+
+Host memory required for this attack: 151 MB
+
+Dictionary cache built:
+* Filename..: plaintextpasswordlist.txt
+* Passwords.: 999998
+* Bytes.....: 8529108
+* Keyspace..: 999998
+* Runtime...: 0 secs
+
+191caf71cfac5f048fab7ff7da3b779939901daad6708bc3e7b1cf4da6155dacf27c91fa23412371f9d9e334483a11eeb97a6c1ff1447b536d30651d5f22a9a7:download
+5476f3c5e67f77be7663939b3be14beeb60df504f7127e1ba2e7862de38b295e4014557367c1e8386a408dba91b29246462ff0a19068b9da7236f27c54b323c7:verizon
+06c82b97931ad0b4c267f04a6ccc3a6c6ce8f2f73e2c5b5401c8e69051d1e30c2cf16fe1bfa9cbb3d9c173538bfe19afbafa3f1e8ecaf9fb810fee685c06e663:iloveyouu
+
+Session..........: hashcat
+Status...........: Cracked
+Hash.Name........: SHA3-512
+Hash.Target......: sha3.txt
+Time.Started.....: Sat Nov 21 15:58:44 2020 (0 secs)
+Time.Estimated...: Sat Nov 21 15:58:44 2020 (0 secs)
+Guess.Base.......: File (plaintextpasswordlist.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........: 28719.9 kH/s (2.26ms) @ Accel:64 Loops:1 Thr:1024 Vec:1
+Recovered........: 3/3 (100.00%) Digests
+Progress.........: 327680/999998 (32.77%)
+Rejected.........: 0/327680 (0.00%)
+Restore.Point....: 0/999998 (0.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:0-1
+Candidates.#1....: 123456 -> boogaa
+Hardware.Mon.#1..: Temp: 36c Fan: 29% Util: 15% Core:1354MHz Mem:3504MHz Bus:16
+
+Started: Sat Nov 21 15:58:40 2020
+Stopped: Sat Nov 21 15:58:46 2020

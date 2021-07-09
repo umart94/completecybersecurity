@@ -1,0 +1,24 @@
+ping works from virtual machine to another virtual machine on the NAT
+ping works from virtual machine to external network
+ping works from virtual machine to host ip ( the machine which runs vm )
+
+
+ping does not work from host command line to guest virtual machine.
+in NAT , vm is not accessible from external network to internal network.
+
+we can enable access from host into guest through port forwarding
+
+add a new port in virtual network editor
+add the virtual machine ip
+add the port of vm
+add the port, for the host machine, which will be used to connect to 
+the ssh port 22 on the virtual machine. through the NAT network mode
+using host machine ip.
+
+after that install open ssh on windows 10
+then from command line
+we have to enter the username on the machine, and ip address = localhost
+
+this will automatically translate to the ip address of the virtual machine
+through the port forwarding rule we added.
+ssh -p 3004 umartariq@127.0.0.1

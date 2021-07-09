@@ -1,0 +1,8 @@
+we have a host operating system
+
+we have a hypervisor, this is the software that allows for creating a virtual operating system.
+hypervisors are virtualbox, vmware.
+
+
+
+we have a guest operating system

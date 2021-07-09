@@ -1,0 +1,45 @@
+when we click a link, the browser loads it and tells us , where the webpage
+came from.
+
+
+
+
+
+
+As I said in the comment you can't hide the Referrer from the server side (as far as I know), but there are ways to do so.
+
+Using a meta tag
+You can tell the browser to not send a referrer by adding the meta element like this:
+
+<meta name="referrer" content="no-referrer">
+Using the referrerpolicy attribute (experimental)
+You can add the referrerpolicy attribute to an anchor element (area, img, iframe and link too), it accepts the following value: no-referrer, no-referrer-when-downgrade, origin, origin-when-cross-origin, unsafe-url more details here.
+
+Using the rel attribute
+You can also pass noreferrer to the rel attribute, more details here
+
+Using the Referrer-Policy HTTP header
+This HTTP header allows you to set a policy about sending the referrer, documentation here, you can use it in PHP with the header() function like this:
+
+header("Referrer-Policy: no-referrer");
+
+Or in your case:
+
+function redirect($url) {
+    header("Referrer-Policy: no-referrer");
+    header("Location: {$url}", true, 307);
+}
+This article explains this feature in more details.
+
+
+
+
+
+
+
+
+
+
+
+
+this can be even in small image pixels, that are invisible on the website.

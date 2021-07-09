@@ -1,0 +1,12 @@
+The CPU and Intel® Graphics Technology OpenCL™ Projects contain C++ host target source examples (.cpp files) that use the OpenCL™ host side C API. They also contain an OpenCL-C device target example (.cl files). These examples are helpful for developers new to heterogeneous and OpenCL™ programming. The Empty OpenCL™ Project contains an empty place holder C++ host target source (.cpp), and an empty placeholder device target source (.cl).
+
+
+
+1. change project to active debug , and x64
+
+2. in C++, add this additional include directory :
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.1\include
+
+these are opencl header files to be included.
+
+3. in linker , in input , add opencl.lib file.

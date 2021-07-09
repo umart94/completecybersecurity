@@ -1,0 +1,32 @@
+general term for methods designed to permanently tracking user by placing something inside the browser.
+
+they cannot be deleted 
+
+when we clear browser history, the site settings still remain on the browser.
+
+1. we can clear entire cache of the app.
+2. we can completely disable cookies on the browser
+
+this evercookie will still be present somewhere, using ways that browser uses to connect to the internet, browser settings , configs and storage.
+/ cache.
+
+
+Telecom providers - use Injected Super Cookies 
+
+every time we do http request on smartphone telecom internet, or even by an isp, they can insert cookies into your requests and into your responses.
+they cannot be stripped out by the user.
+
+everytime a subscriber visits a website, the cookie is placed in the http headers.
+
+these super cookies allow ad publishers and media companies to follow people around the network.
+
+network profiles are built.
+
+
+limit web browser to https websites only.
+
+
+
+
+
+

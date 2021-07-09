@@ -1,0 +1,13 @@
+spying apps
+antivirus softwares
+parental guidance softwares
+
+network devices e.g routers switches etc. logging
+dns - dns queries logged, dns leaks
+
+vpn tunnel, dns leak occurs, dns requests sent through unencrypted network
+instead of a secure tunnel.
+
+auto updates , patches 
+any automatic connections that softwares make
+error reports , telemetry.

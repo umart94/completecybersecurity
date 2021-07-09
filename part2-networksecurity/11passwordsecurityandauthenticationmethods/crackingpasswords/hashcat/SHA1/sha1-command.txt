@@ -1,0 +1,15 @@
+Notice that these hashes are a bit longer than the previous ones; they’re each 40 hexadecimal digits instead of 32. If you take a look at hashcat’s list of example hashes, you’ll see that these match the format of SHA1. You’ll also see that the hash mode for SHA1 is 100.
+
+Replaces the contents of your hashes.txt file with the new hashes, save it, and run the following command in the PowerShell prompt:
+
+1
+.\hashcat.exe -m 100 -a 0 hashes.txt rockyou.txt
+You should find the same passwords as last time:
+
+1
+2
+3
+f17881a3334e0cde99bc94fc9e561db26c8dbef7:manchester123
+4e49638765211345b24821f51d17ad3cb9edd624:heartbreaker07
+5fe0e6ba117a363af16dae5e435f7c7d463ffa93:Estadosunidos18
+Like MD5, SHA1 is outdated and shouldn’t be used for hashing passwords, but it’s still in use in many applications. Notice that the only change in our command was the hash mode; we switched from 0 (MD5) to 100 (SHA1).

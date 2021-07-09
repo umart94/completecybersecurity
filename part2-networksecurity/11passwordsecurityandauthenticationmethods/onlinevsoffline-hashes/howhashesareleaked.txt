@@ -1,0 +1,58 @@
+sql injection attacks ( extract from database)
+hashdumps
+http://www.adeptus-mechanicus.com/codex/hashpass/hashpass.php
+
+hashes can be extracted from operating systems and hard drives.
+
+in windows they are stored in SAM
+The Security Account Manager (SAM) is a database file in Windows XP, Windows Vista, Windows 7, 8.1 and 10 that stores users' passwords
+
+
+can be extracted with various tools
+
+pwdump_7 http://www.tarasco.org/security/pwdump_7/
+https://ophcrack.sourceforge.io/
+
+multiple GPU cluster cracks password
+
+
+
+
+hashid ENTER_HASH_HERE
+
+this will try to tell us about the possible type of hash this is.
+
+
+hashcat -m 0 hashes.txt wordlist.txt -o crackedhashes.txt
+
+
+crackedhashes.txt will be our output file , we can also specify this.
+
+
+
+rule based attacks
+take dictionary of input words
+change them to other words
+
+rules file
+
+$1 $2 $3 $4
+f
+:
+
+f - for duplicate words reversed
+: for nothing
+Reflect	f	Duplicate word reversed	f	p@ssW0rd	p@ssW0rddr0Wss@p
+
+Nothing	:	Do nothing (passthrough)	:	p@ssW0rd	p@ssW0rd	
+
+
+hashcat -m 0 hashes.txt wordlist.txt -o crackedhashes.txt -- rules rules
+
+pass the hash is when we can use the hash itself to authenticate to a remote server
+
+rather than doing all what we did, i.e extract the hash, convert and get the plaintext, enter plaintext password to authenticate.
+
+instead the hash remains static from session to session, so we can use hash itself to authenticate to the server.
+
+

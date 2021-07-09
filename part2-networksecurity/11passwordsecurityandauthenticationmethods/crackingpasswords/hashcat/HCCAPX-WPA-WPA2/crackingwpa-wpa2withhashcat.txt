@@ -1,0 +1,62 @@
+Cracking WPA/WPA2 with hashcat
+The .cap and .hccapx
+hashcat accepts WPA/WPA2 hashes in hashcat's own “hccapx” file format. Assuming that you have already captured a 4-way handshake using hcxdumptool (hcxdumptool), airodump-ng (aircrack-ng), besside-ng (aircrack-ng), Wireshark or tcpdump. It is recommended to use hcxdumptool to capture traffic.
+
+Get hcxdumptool from https://github.com/ZerBea/hcxdumptool
+The next step will be to convert the .cap file to the hccapx format that hashcat can understand. The easiest way to do this is to use this web interface provided by the hashcat team:
+
+https://hashcat.net/cap2hccapx/
+Just upload your .cap, and it will be converted to a .hccapx file.
+
+Of course, you may not want to upload sensitive data to a web site that you do not control. If you don't mind, go for it. Otherwise, you can download the cap2hccapx utility and execute it locally, using the following steps:
+
+Get hashcat-utils from https://github.com/hashcat/hashcat-utils
+Use cap2hccapx to convert locally
+or
+
+Get hcxtools from https://github.com/ZerBea/hcxtools
+Use hcxpcapngtool to convert locally and/or to get the PMKID
+hcxpcapngtool support new WPA-PBKDF2-PMKID+EAPOL hash format (hashcat >= 6.0.0 -m 22000 and m 2200x)
+
+A technical overview of the hccapx file format is also available.
+
+To convert your .cap files manually in Backtrack/Kali
+The cap2hccapx utility and hcxdumptool/hcxtools are still new. At this writing, Kali has not yet updated from hccap to hccapx.
+
+To convert your .cap files manually in Arch Linux
+hashcat, hashcat-utils, hcxdumptool, hcxtools and hcxkeys are available via default package manager (pacman).
+
+Preparation
+hashcat is very flexible, so I'll cover three most common and basic scenarios:
+
+Dictionary attack
+Brute-Force attack
+Rule-based attack
+Dictionary attack
+Grab a wordlist, like RockYou.
+Put it into the hashcat folder.
+Rename your converted capture file “capture.hccapx”.
+On Windows, create a batch file “attack.bat”, open it with a text editor, and paste the following:
+hashcat.exe -m 2500 capture.hccapx rockyou.txt
+pause
+Execute the attack using the batch file, which should be changed to suit your needs.
+
+Brute-Force Attack
+Rename your converted capture file “capture.hccapx”.
+Create a batch file “attack.bat”, open it with a text editor, and paste the following:
+hashcat.exe -m 2500 -a3 capture.hccapx ?d?d?d?d?d?d?d?d
+pause
+This will pipe digits-only strings of length 8 to hashcat. Replace the ?d as needed.
+
+It would be wise to first estimate the time it would take to process using a calculator.
+
+TBD: add some example timeframes for common masks / common speed
+
+Rule-based attack
+This is similar to a Dictionary attack, but the commands look a bit different:
+
+hashcat.exe -m 2500 -r rules/best64.rule capture.hccapx rockyou.txt
+pause
+This will mutate the RockYou wordlist with best 64 rules, which come with the hashcat distribution.
+
+Change as necessary and remember, the time it will take the attack to finish will increase proportionally with the amount of rules.

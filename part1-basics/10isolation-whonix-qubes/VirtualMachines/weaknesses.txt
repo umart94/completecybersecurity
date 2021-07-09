@@ -1,0 +1,33 @@
+must be kept isolated from each other
+vms also have CVE bugs.
+network level interfaces used as attack vector.
+cpu is shared Timing channel attack
+passing of information
+1 process signals/passes information to another process by modulating its own use of system resources.
+affects time observed by second process.
+
+timing / covert channel
+
+cpu is shared
+side channel attacks
+extract decryption keys from guest or host.
+
+Shared Folders
+Clipboard access
+drag and drop functionality
+allow attack vectors.
+
+trade off with security.
+
+hardware
+microphone
+3d acceleration
+cd
+floppy
+usb ports
+etc.
+
+used as attack vector
+
+bug found in underlying technology used by hypervisors such as cpu hardware.
+

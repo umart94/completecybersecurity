@@ -1,0 +1,23 @@
+laptop
+secure OS - whonix - qubesos - tor -virtual machines - isolated.
+
+
+portable router - ethernet cable.
+sim card internet
+3g 4g usb
+
+
+portable router - with a usb and router is connected to laptop via cable. ( best option )
+
+do not re use a sim and mobile device.
+use anonymous prepaid credit.
+not contaminated aliases.
+dont use gps apps
+dont use seperate mobile phones.
+user anonymizing services.
+disable built in wireless
+
+ssh vpns host based application firewall
+
+
+

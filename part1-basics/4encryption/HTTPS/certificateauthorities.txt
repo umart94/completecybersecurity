@@ -1,0 +1,195 @@
+you are as strong as the weakest link
+bogus certificates will create vulnerabilities.
+
+
+fake certificate that browser trusts.
+
+no idea that https can be intercepted and read.
+
+network traffic will look fine
+but whoever issued the certificate can look at the traffic.
+
+
+practices of certificate authorities.
+
+Certificate Transparency logging of all certificates
+
+Certificate transparency
+In order to provide encrypted traffic to users, a site must first apply for a certificate from a trusted Certificate Authority (CA). This certificate is then presented to the browser to authenticate the site the user is trying to access. In recent years, due to structural flaws in the HTTPS certificate system, certificates and issuing CAs have proven vulnerable to compromise and manipulation. Google's Certificate Transparency project aims to safeguard the certificate issuance process by providing an open framework for monitoring and auditing HTTPS certificates.
+
+Use the search bar below to look up all of a domain’s certificates that are present in active public certificate transparency logs. Site owners can search this site for domain names they control to ensure there have been no incorrect issuances of certificates referencing their domains.
+
+Google encourages all CAs to write the certificates they issue to publicly verifiable, append-only, tamper-proof logs. In the future, Chrome and other browsers may decide not to accept certificates that have not been written to such logs.
+
+As of Oct 20, 2020, there have been 10,928,629,980 entries made to the set of Certificate Transparency logs that Google monitors.
+
+
+In a separate blog post, Google said Symantec issued a Thawte-branded Extended Validation (EV) pre-certificate for the domains google.com and www.google.com which was neither "requested nor authorized" by the tech giant.
+
+The issue was discovered by Google employees who were monitoring Certificate Transparency, an open framework and project ran by the company to fix structural flaws in the SSL certificate system. A useful system, no doubt, as Google was able to detect the unauthorized certificate activity almost immediately.
+
+
+
+
+The point-in-time assessment will establish Symantec’s conformance to each of these standards:
+
+WebTrust Principles and Criteria for Certification Authorities
+WebTrust Principles and Criteria for Certification Authorities – SSL Baseline with Network Security
+WebTrust Principles and Criteria for Certification Authorities – Extended Validation SSL
+The third-party security audit must assess:
+
+The veracity of Symantec’s claims that at no time private keys were exposed to Symantec employees by the tool.
+That Symantec employees could not use the tool in question to obtain certificates for which the employee controlled the private key.
+That Symantec’s audit logging mechanism is reasonably protected from modification, deletion, or tampering, as described in Section 5.4.4 of their CPS.
+We may take further action as additional information becomes available to us.
+
+
+
+
+
+
+
+
+
+
+
+
+certificate authorities inside browsers
+
+
+nation states will have influence over certificate authorities.
+
+and they will claim to be whoever they want to be
+and they will be able to view encrypted traffic.
+
+X509 standard is poorly designed
+
+there are intentional bugs
+e.g in process of getting certificates
+
+for e.g Null Byte poisoning.
+
+
+bogus certificates
+
+sslsniff
+
+insert bogus certificates / different certificates.
+
+https://github.com/moxie0/sslsniff
+
+
+
+The power in a certificate is NOT in the certificate. It is in the private key. When a server "uses a certificate", it really uses the private key; and the server shows the certificate (that contains only the public key) to the client. The certificate is a proof that a given public key belongs to a specifically named entity. For instance, the certificate that is used by the SSL server www.google.com contains that name (www.google.com) and Google's public key. Google won't show you their private key, of course !
+
+A certificate is not accepted as proof merely because it exists; a client is supposed to perform certificate validation, a complex and convoluted process which entails building certificate chains and verifying a lot of signatures, because a certificate is signed by an authority that is endowed with the power to sign certificate, and is therefore named a certification authority (or CA for short).
+
+Certificates are described in X.509, which is best described as "the Devil's Masterpiece Of Confusion". To practically cope with the sheer complexity of X.509, implementations, in particular Web browsers and other SSL client applications, tend to "take shortcuts" which allow the whole validation thing to complete within reasonable time, but also have a deleterious effect on overall security.
+
+Certificate pinning is a method by which some implementations try to restore a bit of security while still being practical. All of X.509 is context-free: a client is supposed to be able to validate a server certificate without any memory or state kept from previous validations. Certificate pinning is the negation of that notion: the client "pins" a certificate by remembering that a given certificate was used by some server, and then using that information to efficiently "validate" that certificate, should the client connect again to the same server. Pinning even goes to reject a server certificate if it is not the same as the one used by the server during a previous connection to that same server.
+
+The idea is that if an attacker tries to show you a fake server, he won't be able to show the certificate of the genuine server -- of course, the attacker could show a copy of the true certificate (that's public data, the server sends it to all connecting clients), but the attacker would not be able to use the corresponding private key, since he does not have it (the private key, as the name says, is private). Instead, in order to be able to pose as a fake server that can do a complete SSL handshake, the attacker must feed the client a fake certificate that contains the attacker's public key, distinct from that of the server. With certificate pinning, the suspicious client will notice that the server apparently switched certificates, and will find that fishy, and will complain to the user, who will then click off the friggin' warning popup and proceed to sending his credit card number to the attacker because users are like that.
+
+It shall be noted that certificate pinning does any good only in cases where the attacker could obtain a certificate that is accepted by what passes for certificate validation code in client applications. There have been a few highly publicized cases of a CA being bribed or hacked into issuing fake certificates; however, this is still rare. Also, certificate pinning cannot be really absolute because certificates have validity dates, for a bunch of reasons (some of them being even rationally acceptable), so there must be some situations where a client with certificate pinning will still accept that the server changed its certificate.
+
+An example of protocol, similar to SSL, and using public/private key pairs (not X.509 certificates, though) in a "full pinning" model, is SSH. When you connect to a SSH server for the first time, the client asks confirmation about whether the public key sent by the server is the right one (the human user is supposed to check the hash of that key with some authoritative source); then, the client remembers that key (in the .ssh/known_hosts file for Unix-based SSH clients) and will scream loudly if the server ever happens to change its key.
+
+
+
+
+Typically certificates are validated by checking the signature hierarchy; MyCert is signed by IntermediateCert which is signed by RootCert, and RootCert is listed in my computer's "certificates to trust" store.
+
+Certificate Pinning was where you ignore that whole thing, and say trust this certificate only or perhaps trust only certificates signed by this certificate, ignoring all the other root CAs that could otherwise be trust anchors. It was frequently also known as Key Pinning, since it was actually the public key hash that got saved.
+
+But in practice, Key Pinning turned out to cause more problems than it solved. It was frequently misconfigured by site owners, plus in the event of a site compromise, attackers could maliciously pin a cert that the site owner didn't control. Key Pinning was deprecated in 2017, and was removed entirely from Chrome and Firefox in Nov. 2019. It was never supported to begin with by IE and Safari.
+
+The recommended replacement is to use the Expect-CT header to tell browsers to require that the cert show up in Certificate Transparency logs.
+
+share  improve this answer  follow 
+edited Dec 1 '19 at 9:04
+answered Jan 31 '13 at 1:23
+
+tylerl
+79.1k2525 gold badges140140 silver badges221221 bronze badges
+9
+Good answer, but it also depends on the browser; Google's Chrome browser pins the certificates for Google sites, so in your example, a Chrome browser would only trust specific google.com certificates known to be the correct ones (or the ones signed by the Google Internet Authority). – KeithS Feb 5 '13 at 19:58
+3
+@KeithS the principle is browser-independent. Google pins certificates it knows using a slightly different mechanism (public key hashes instead of certificate hashes), but it's still close enough that calling it "pinning" is still correct. – tylerl Feb 5 '13 at 21:52
+3
+So how is it done? Certificate Pinning, I mean – user93353 Apr 28 '13 at 12:19
+6
+@JoshvonSchaumburg When the offending certificate is locally installed (not chained to a root store certificate) then Chrome doesn't do it's pinning checks. This is intentional. The idea is that if you are the owner of the local machine, then your decision should be final and Chrome shouldn't try to circumvent your actions. I think there's been some chatter in the past about giving some visual indication that the certificate is locally-trusted rather than globally-trusted, nothing has been implemented so far. – tylerl May 3 '15 at 22:24
+5
+Your post confuses HSTS for HPKP. HSTS only ensures HTTPS is used; certificate pinning is HPKP's job. – user2428118 Apr 25 '17 at 8:08
+show 8 more comments
+
+36
+
+It's ambiguous, but it refers to solutions for an issue in SSL certificate chain verification. Essentially, trust in SSL boils down to root certificates, the certificates your system trusts in to be genuine. Those either come with your OS or with your browser. If one of those is compromised, all certificates signed by this and transitively signed certificates are to be treated as compromised.
+
+TACK or Public Key Pinning Extension (referred to as cert pinning by chrome, apparently) allows the admin of a server to "pin" a certificate authority's (CA) public key signature to a certificate, which is verified by the client (delivered via SSL extension). If the CA certificate's key is different upon retrieval of the certificate chain, the CA certificate is likely to be compromised. Source
+
+Cert pinning can also refer to importing a host's certificate in your trust store, rather than trusting CA certificates. This mitigates the risk of a CA cert being compromised but forces you to update certificates if they expire manually. Source
+
+
+
+
+
+
+SSL server certificates come from the X.509 world. The client verifies the validity of the server's certificate by validating a lot of cryptographic signatures from Certification Authorities. The beauty of the scheme is that it is stateless: a given server could change its certificate every five minutes, and it would still work with clients.
+
+It has been argued that while supporting fast-revolving certificates is awesome but useless, because in practice a given server changes its certificate once per year; indeed, an early certificate switch is indicative of some ongoing fishy business. Certificate pinning is a way for a server to state that this should not happen under normal conditions, and that the client should raise a metaphorical eyebrow should an unexpected certificate switch occur. This is a protocol extension, suggested but not widely supported yet. Actually there seems to be several relatively similar, competing proposals.
+
+See also Convergence, yet another protocol extension which can be thought of as "certificate pinning by trusted third parties". Convergence and the certificate pinning proposals all dance around the same core idea, which is to have some state in the client (or somewhere, at least), and trigger security warnings when certificates change too often or too early. Whether any of these proposals will ever reach wide acceptance (i.e. will be implemented in a compatible way by IE, Firefox, Chrome and Safari, and will be used by most SSL server sysadmins) is anyone's guess.
+
+
+
+
+
+
+Generally what happens in a HTTPS connections is that client asks for SSL certificate from the SSL compliant server it is communicating with over https. Server will provide a certificate from its key store. After client receives this certificate it validates its credentials depending on whether
+
+hostname is same as requested
+has a verifiable chain of trust back to a trusted (root) certificate [from clients trust store]
+Now if connections are proxied and you can get the device to trust your (rogue) root CA certificate then you can intercept the secure connections. This is essentially man-in-the-middle attack. Now here is what happens in SSL pinning which potentially adds an extra security layer from man-in-the-middle attacks-
+
+App will bundle the known server certificates with itself. When app tries to make a secure connection with the server, it validates the certificate received by the server with the ones it has bundled with. So even if OS validates the received certificate chain against a (potentially rogue) root CA, the app will reject the connection displaying network error.
+
+Note: I have tried to answer this question from a perspective of SSL pinning in Android Apps. SSL pinning is easily possible in such Apps because the app already knows the server (hostname) it is going to connect to. Same may be difficult to implement in browsers though. I think chrome browser already implements this.
+
+I have also wrote a sample code demonstrating cert pinning in Android. You can find it on github. You can also find the same app on playstore.
+
+More information :
+
+http://nickfishman.com/post/50557873036/reverse-engineering-native-apps-by-intercepting-network
+http://blog.lumberlabs.com/2012/04/why-app-developers-should-care-about.html
+
+
+
+
+
+
+Certificate pinning allows to bypass standard certificate authority chains to mitigate the risk of an valid certificate be issued to a criminal.
+Motivation for a new solution...
+SSL/TLS certificates are signed by other certificates. Browsers normally recognize a certificate as valid when in some point of this signature chain a trusted entity is found. The signatures of the trusted entities comes in the basic installation of the operating system and browsers. It is an embedded list of about 100 entities.
+
+If one of the trusted certificate authority are compromised or if the certificate authority is victim of a fraud they can issue an valid certificate to a criminal. The criminal will have a perfect SSL/TLS certificate in your name. The criminal will be able to make successful and believable "man in the middle" attacks. The user will see a valid certificate info to your website.
+
+Also, is not difficult to convince the user to install a new trusted certificate authority. For instance, in Brazil, the official certificate authority is not recognized by the main browsers and everyone has to install an additional certificate authority. Browsers got very good at this: only click in a link and answer yes. To reach this level of usability I believe this is a common task worldwide.
+
+The certificate authorities can not be fully trusted. The process to get a certificate is by no means secure. I already bought one in a company and did not much more than pay for it. Of course is way better than nothing. But needs improvement.
+
+What is pinning?
+On the first access to the website secure.example.com, the website send a hidden message to the client browser that loosely translates as:
+
+"in the next N days the secure.example.com website will use the certificate CECECECE. In that period do not accept another certificate, even if the certificate authority claims it is valid for this website. If it happens notify me at http://100.200.100.200/callbacks/warn_pinning.php".
+
+Pinning solves the problem?
+It does not solve the weakness of the certificate authorities certificate signing process. But minimize the window of opportunity of a criminal to get by with a man in the middle attack. The attack will only work if gets the user in his or hers first access to the website.
+
+It is similar to the SSH security. On first access the signature of the key of the server is saved. If in future access the identification does not match the system generates an warning. The warning is taken seriously because only happens when you make real changes.
+
+The best thing for a big company is to get notified through clients complaints that someone has issued a real TLS/SSL certificate in their name to a criminal. As I understand the pinning mechanism was proposed by Google
+
+Application Level Pinning
+Pinning can also be made outside the browser, by compile the real certificate fingerprint in a app.

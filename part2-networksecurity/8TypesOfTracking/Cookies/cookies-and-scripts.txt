@@ -1,0 +1,22 @@
+http is stateless
+cookies allow to save something inside it
+
+for e.g
+if we log in, session cookies save session state ( on the client side)
+
+
+scripts also have tracking code inside them.
+analytics scripts
+like buttons
+subscribe buttons etc.
+share buttons
+
+
+if we are not loggedin, we are tracked using a cookie id number.
+
+generate cookie id
+capture session cookie , via mitm attack
+relay into http header
+login as that user.
+
+website can be tested using burp suite

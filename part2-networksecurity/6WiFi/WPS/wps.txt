@@ -1,0 +1,33 @@
+enter short pin number instead of a password
+get this by reading this from sticker on back of device.
+
+WPS pin enabled by default
+
+the flaw allows remote attacker to recover a wps pin with a bruteforce attack
+
+we can get network wpa , wpa2 preshared key.
+access to the network..
+
+in kali tool called reaver
+https://gitlab.com/kalilinux/packages/aircrack-ng
+
+
+
+custom firmware can allow for us to switch wps off.
+
+in some routers wps continues to function.
+
+
+Evil Twin AP
+Attacker sets up access point , with an SSID that is same as a real wifi access point
+beacause it has the same name, if signal is stronger, the devices would connect to this rogue network instead of your own wifi network.
+
+evil twin is a hard attack
+
+use encryption
+
+authenticating with wpa2 enterprise with eap
+
+exploits against wifi drivers, protocol stack
+dhcp or even attacks against wpa2 with aes we are not aware of.
+

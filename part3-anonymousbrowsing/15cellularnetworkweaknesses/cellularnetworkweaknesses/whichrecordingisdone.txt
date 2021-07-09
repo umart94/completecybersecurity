@@ -1,0 +1,43 @@
+voice call recording
+record and log content of internet data traffic
+anything that is unencrypted can be read.
+
+ssl / tls cant be read.
+
+short message type 0 - to keep track of us
+software updates that can manipulate phone.
+depends on phone and network provider
+
+teledumps - cross correlation
+metadata
+call duration
+calls location
+callers
+receivers
+time of calls
+time of sms
+picture smses
+internet usage
+subscriber identity
+IMSI
+TMSI
+core patterns
+
+
+IMSI
+
+
+Definition - What does International Mobile Subscriber Identity (IMSI) mean?
+An international mobile subscriber identity (IMSI) is a unique number, usually fifteen digits, associated with Global System for Mobile Communications (GSM) and Universal Mobile Telecommunications System (UMTS) network mobile phone users. The IMSI is a unique number identifying a GSM subscriber.
+
+This number has two parts. The initial part is comprised of six digits in the North American standard and five digits in the European standard. It identifies the GSM network operator in a specific country with whom the subscriber holds an account. The second part is allocated by the network operator to uniquely identify the subscriber.
+
+The IMSI is stored in the Subscriber Identity Module (SIM) inside the phone and is sent by the phone to the appropriate network. The IMSI is used to acquire the details of the mobile in the Home Location Register (HLR) or the Visitor Location Register (VLR).
+
+TMSI
+
+TMSI
+The Temporary Mobile Subscriber Identity (TMSI) is a temporary identification number that is used in the GSM network instead of the IMSI to ensure the privacy of the mobile subscriber. The TMSI prohibits tracing of the identity of a mobile subscriber by interception of the traffic on the radio link.
+
+The TMSI is assigned to a mobile subscriber by the Authentication Centre (AUC). The TMSI is assigned for the duration that the subscriber is in the service area of the associated Mobile Switching Centre (MSC).
+

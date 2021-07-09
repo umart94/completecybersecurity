@@ -1,0 +1,18 @@
+SDP -done
+SCP - done
+SMSC - done
+AuC - done
+HLR - done
+
+FNR - done
+BSC - done
+GMSC - done
+SCP - done
+VLR - done
+SMSC done
+MSC - done
+BSC -done
+
+PSTN -done
+PLMN -done
+SS7 -done

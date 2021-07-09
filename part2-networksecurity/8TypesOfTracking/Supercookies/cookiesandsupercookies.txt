@@ -1,0 +1,32 @@
+Sandboxie Control
+
+makes all changes to the sandbox
+examine what it has added in the sandbox.
+
+1. use non persistent os
+tails whonix
+vm snapshot
+clear snapshot afterwards.
+
+
+live debian guest
+iceweasel
+apparmor
+firejail
+non persistence.
+
+bleachbit
+ccleaner
+
+betterprivacy
+supercookie LSO
+decentraleyes
+
+
+portable self contained firefox browsers in self contained containers
+
+mozilla firefox portable
+JonDonym
+Tor
+
+supercookie evercookie .. to test the browser against.

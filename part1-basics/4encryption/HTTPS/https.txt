@@ -1,0 +1,19 @@
+https provides security services thorugh ssl / tls.
+
+web server invokes ssl
+protects communication
+server sends message back
+client sends security parameters
+
+digital signature
+key exchange algorithm
+and symmetric key
+
+server matches compatibility with its own cipher suites
+server matches and then sends public certificate
+
+client then decides if this is authentic.. and initiates / agrees to connection.
+client generates a symmetric session key aes .. encrypts with the servers public key with this key
+and sends it to server
+
+tls enabled server and browser.

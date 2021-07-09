@@ -1,0 +1,12 @@
+http referer :
+
+a website that has link to another website.
+the website that contained the link referred us to that particular website.. hence called http referrer.
+
+
+ads
+tracking script
+referrer spoofing
+
+refcontrol addon
+smart referer

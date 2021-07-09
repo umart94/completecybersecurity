@@ -1,0 +1,20 @@
+update all
+hardware
+operating system
+firmware
+softwares
+
+
+apply patches to cve fixes.
+
+enable optional updates
+
+KB = patch number
+CVE = Vulnerability Number
+
+
+
+Secunia personal software inspector
+
+Flexera PSI
+

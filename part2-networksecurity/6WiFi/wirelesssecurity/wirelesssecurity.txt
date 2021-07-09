@@ -1,0 +1,84 @@
+secure and strengthen wifi
+including network isolation:
+
+
+Network isolation
+
+wireless networks and physical networks should be isolated.
+
+VLANS dont work on wifi
+
+in wifi have seperate wifi networks for seperate trust levels.
+
+
+in dd-wrt we use bridge to enforce seperation on same access point, also firewall rules are used.
+untrusted devices only have access to internet
+
+traffic could be allowed from trusted or semi trusted networks to connect inbound to the untrusted ssid.
+
+semi trusted will not be allowed to connect outbound to trusted networks.
+
+trusted devices may choose to connect into semi trusted.
+
+router access points have feature called ap isolation. / wireless isolation.
+
+DLINK has guest zone
+link sys
+netgear wireless settings also has this functionality.
+
+
+
+routers must be kept up to date with latest updated patched firmware.
+
+else use custom updated firmware.
+
+
+
+use complex passwords. and complexSSIDs.
+wpa2 enterprise
+radius authentication server
+extensible authentication protocol.
+
+or
+
+WPA2-Personal (WPA-PSK preshared key)
+CCMP/AES Encryption
+CBC-MAC
+Never use WEP or WPA
+avoid tkip.
+
+
+always use SSL/TLS
+VPN
+
+disable WPS on router.
+
+if router can implement arpspoof protection . enable that .
+pfSense has it built in ( arpwatch)
+
+hide ssid
+use ieee 802.1x authentication
+eap using eapol and radius.
+use mac filtering
+reduce max associated clients.
+
+Radio frequency isolation techniques.
+
+whoisonmywifi
+xirrus wifi inspector
+wifi network monitor
+wireless network watcher
+glasswirefirewall
+
+fing network tools
+nmap
+arp-scan on kali linux
+arp -a
+tcpdump
+wireshark
+
+
+
+
+
+

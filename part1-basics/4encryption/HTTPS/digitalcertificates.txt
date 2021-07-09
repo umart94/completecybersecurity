@@ -1,0 +1,16 @@
+x.509 certificates
+in the chain of certificates.. the sha 256 and rsa hashes must match.
+this shows that the certificates are genuine in the chain of certificates
+
+
+digicert high assurance ev root ca -> digicert sha2 extended validation server ca -> support.mozilla.org
+
+
+
+
+In the browser inside certificate manager we have : 
+
+the root certificate authorities that clients ( us ) are trusting.
+
+
+these are installed in browser, so we will trust the websites using these Root Certificate authorities through chain of trust.

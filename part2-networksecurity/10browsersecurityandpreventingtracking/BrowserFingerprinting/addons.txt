@@ -1,0 +1,32 @@
+Chameleon by sereneblue
+
+Spoof your browser profile. Includes a few privacy enhancing options.
+
+A WebExtension port of Random Agent Spoofer.
+
+
+
+CanvasBlocker by kkapsner
+
+Alters some JS APIs to prevent fingerprinting.
+
+
+JSRecon
+Information gathered include:
+
+Browser
+Current URL
+Response Header
+Date
+Browser
+Plugin
+Device
+Platform
+Battery
+Graphic Driver
+Screen
+Network
+Public IP Address
+Private IP Address
+Connection Type
+Local Network Device

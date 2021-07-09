@@ -1,0 +1,56 @@
+webmail - gmail , outlook , etc. on browser
+in webmail we access via https port 443 ( ssl / tls encrypted )
+authentication is required
+certificate of server is required
+client - password or 2fa
+
+
+
+email clients e.g thunderbird , outlook for windows :
+
+protocols and ports :
+
+imap port 143 ( unencrypted )
+pop port 110 ( unencrypted )
+imap port 993 ( ssl / tls encrypted )
+pop3 port 995 ( ssl / tls encrypted )
+
+imap is synced on clients and server  (server has master copy ) - use imap if laptop is vulnerable
+pop is stored on client only - use pop if server is vulnerable.
+
+
+
+
+
+
+authentication is 
+
+server - certificate ( usually )
+client - password / 2fa / ntlm / oauth2 / kerberos / gssapi / tls certificates
+
+
+
+protocols and ports for sending email
+
+port 25 smtp ( unencrypted )
+smarttls 587 ( ssl/tls encrypted ) - more vulnerable to man in the middle attacks.
+smtp port 465 ( ssl/tls encrypted ) - more secure than smarttls.
+
+cipher suites
+
+check them by using website like qualys ssl labs ( verifies the ssl certificates )
+
+on kali linux - sslscan
+
+
+sslscan www.ghostmail.com:465
+www.checktls.com
+
+
+
+
+nslookup -type=mx gmail.com
+telnet
+netcat
+
+

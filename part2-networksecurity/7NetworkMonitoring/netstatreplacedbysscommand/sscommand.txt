@@ -1,0 +1,31 @@
+ss - listing all connections
+
+ss -a - listing listening and non listening ports
+
+ss -l - listing listening sockets
+
+
+ss -t - listing tcp connections
+
+
+ss -lt - listing all listening tcp connections
+
+
+ss -ua - list all udp connections
+
+ss -lu - list all listening udp connections
+
+
+ss -p - display PID of sockets
+
+ss -s - display summary
+
+
+ss -4 - ipv4 connections
+
+ss -6 - ipv6 connections
+
+11. Filter Connections by Port Number
+ss command also lets you filter socket port number or address number. For example, to display all socket connections with a destination or source port of ssh run the command.
+
+$ ss -at '( dport = :22 or sport = :22 )'

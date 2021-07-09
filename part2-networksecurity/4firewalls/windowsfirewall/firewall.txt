@@ -1,0 +1,8 @@
+default policy is set to inbound deny and outbound allow all
+
+outbound allow all eases config but not ideal .
+
+windows firewall control - binisoft - malwarebytes software.
+
+comodo firewall
+tinywall

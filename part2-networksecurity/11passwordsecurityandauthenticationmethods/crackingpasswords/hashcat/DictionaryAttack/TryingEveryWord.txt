@@ -1,0 +1,10 @@
+We haven’t seen hashes like these before. These are in crypt form; they contain multiple pieces of information separated by dollar signs ($). Breaking down the components:
+
+2y indicates the hash type. In this case, 2 is the main hash family, and y specifies the subtype. If you’re interested, Wikipedia has an explanation for the choice of 2y. For our purposes, we just need to figure out the algorithm and the corresponding hashcat hash mode. Searching hashcat’s list of example hashes for $2y$ doesn’t yield any results, but $2 brings us to a line that mentions $2*$; the * means “anything”, so we can assume that includes $2y$. You’ll see that it corresponds to bcrypt, a modern, secure hashing algorithm, and that the hash mode is 3200.
+05 indicates the cost factor. In simple terms, this determines how many times the password is run through the algorithm; the idea is that as computers get faster, the cost factor will be increased, allowing bcrypt to remain secure. Algorithms that are too fast are insecure because it’s easy for tools like hashcat to attempt a large number of passwords in a short time frame. As of 2019, a secure cost factor would be closer to 10, but we’re going to practice with 5 to keep the hardware requirements reasonable.
+The base-64-ish string that follows is the salt followed by the hash. We don’t need to worry about separating them; hashcat is capable of parsing crypt-formatted hashes for us.
+In addition to dealing with a much more secure algorithm and salt, we’re also going to need a new attack method. Our word list attack isn’t going to work unless our word list just so happens to contain a lot of passwords beginning with SKY-TEST-. Let’s test this just to be sure:
+
+1
+.\hashcat.exe -m 3200 -a 0 hashes.txt rockyou.txt
+No dice. We could wait for hashcat to try every password in rockyou.txt.

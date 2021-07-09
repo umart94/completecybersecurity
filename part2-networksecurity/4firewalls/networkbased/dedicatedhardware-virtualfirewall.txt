@@ -1,0 +1,23 @@
+virtual machine
+hardware
+
+e.g apu
+
+pcengines.ch
+
+	apu platform
+Summary:	The PC Engines apu system board is a big step up in performance and capacity from the popular ALIX series.
+Please consider our apu2 platform for longer term availability.
+
+Applications:	Routers, firewalls, VOIP, dedicated servers, special purpose network plumbing, education tools...
+CPU:	AMD G series T40E APU, 1 GHz dual core (Bobcat core) with 64 bit support, 32K data + 32K instruction + 512KB L2 cache per core
+DRAM:	2 or 4 GB DDR3-1066 DRAM with a 64 bit bus
+Storage:	Boot from SD card (connected through USB), external USB or m-SATA SSD. 1 SATA data + power connector.
+Power:	About 6 to 12W of 12V DC power depending on CPU load.
+Expansion:	2 miniPCI express (one with SIM socket for 3G modem), LPC bus, GPIO header, I2C bus, COM2 (3.3V RXD/TXD).
+Connectivity:	3 Gigabit Ethernet (Realtek RTL8111E), 1 DB9 serial port (console).
+Firmware:	coreboot open source system BIOS with support for iPXE and USB boot.
+Form factor:	6"x6" (152.4 x 152.4 mm), fits in our case1d2*u enclosures.
+Cooling:	Conductive cooling from the CPU and south bridge to the enclosure using a 3 mm alu heat spreader. Please contact us for advice if you want to integrate this board in your own enclosure.
+Models:	apu1d (2 GB DRAM), apu1d4 (4 GB DRAM).
+Status:	Now in production.

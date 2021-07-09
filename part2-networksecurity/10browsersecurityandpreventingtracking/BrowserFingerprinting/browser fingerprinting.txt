@@ -1,0 +1,40 @@
+user agent
+fonts
+browser type
+addons
+
+query browser to gain insight into browser
+if this is unique enough
+it is possible to track users
+
+this doesnt even require cookies.
+
+The results show that the overwhelming majority of Internet users could be uniquely fingerprinted and tracked using only the configuration and version information that their browsers make available to websites. These types of system information should be regarded as identifying, in much the same way that cookies, IP addresses, and supercookies are.
+
+In our analysis of anonymized data from around half a million distinct browsers, 84% had unique configurations. Among browsers that had Flash or Java installed, 94% were unique, and only 1% had fingerprints that were seen more than twice. However, our experiment only studied a limited number of variables, and the companies that offer specialized fingerprinting services are likely to use a wider and therefore more powerful range of measurements.
+
+While almost all browsers are uniquely fingerprintable, there were four special categories that were comparatively resistant to fingerprinting:
+
+Those with JavaScript disabled (possibly using a tool like NoScript)
+Those that use TorButton, which successfully anticipated and defended against many fingerprinting measurements.
+Mobile devices like Androids and iPhones (unfortunately, these devices tend not to have good interfaces for controlling cookies, and so may be trackable by that method)
+Corporate desktop machines that are precise clones of one another (Such systems appeared to constitute around 3-4% of the visitors to Panopticlick; unfortunately, there are some fingerprinting techniques like CPU clock skew measurement which would will work against these systems. commercial fingerprinting services employ those techniques).
+Ultimately, browser developers will need to take the lead in defending their users against this particularly troublesome form of tracking. That won't be easy, but our article includes a number of recommendations about how to start.
+
+
+
+
+browser leaks
+ip leaks
+
+random agent spoofer. randomize user agent.
+useragent leak through web sockets.
+client side html5 canvas fingerprinting.
+
+Canvasblocker.
+
+JS-RECON
+websockets - XHR
+remote content to enumerate list of tcp ports open on localhost as well as any other machines on the local network..
+
+

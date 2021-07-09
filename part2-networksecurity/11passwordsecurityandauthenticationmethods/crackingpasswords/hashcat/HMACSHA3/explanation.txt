@@ -1,0 +1,9 @@
+1750	HMAC-SHA512 (key = $pass)	94cb9e31137913665dbea7b058e10be5f050cc356062a2c9679ed0ad6119648e7be620e9d4e1199220cd02b9efb2b1c78234fa1000c728f82bf9f14ed82c1976:1234
+
+
+1760	HMAC-SHA512 (key = $salt)	7cce966f5503e292a51381f238d071971ad5442488f340f98e379b3aeae2f33778e3e732fcc2f7bdc04f3d460eebf6f8cb77da32df25500c09160dd3bf7d2a6b:1234
+
+
+we used hmac-sha512 algorithm, with the salt appended afterwards.
+
+both must be in the password list you supply to hashcat

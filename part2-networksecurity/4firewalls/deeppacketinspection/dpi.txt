@@ -1,0 +1,14 @@
+What is DPI?
+Deep packet inspection (DPI), also called complete packet inspection and information extraction (IX) is a technique for inspecting data in order to identify and filter out malware and other unwanted traffic.
+
+Each data packet includes both its own content and a set of headers that control how it is handled by routers and other devices as it is transmitted across the internet. DPI is a method that inspects not only the packet’s multiple headers, but also the actual data content of the packet. DPI can search for protocol non-compliance, viruses, spam, intrusions, or defined criteria to decide whether the packet may pass or if it needs to be routed to a different destination. This makes it a critical tool for advanced IT security.
+
+Why DPI is important
+Deep Packet Inspection (and filtering) enables advanced network management, user service, and security functions as well as internet data mining, eavesdropping, and internet censorship. DPI is used in a wide range of enterprise-level applications, by telecommunications service providers, and by governments.
+
+In the age of fast-evolving advanced threats and zero-day attacks, DPI is also a critical and fundamental aspect of an effective network security strategy.
+
+
+
+we only set an outbound port and rule and not an inbound rule.
+

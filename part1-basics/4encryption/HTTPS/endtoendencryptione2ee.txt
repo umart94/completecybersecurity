@@ -1,0 +1,24 @@
+data encrypted only by sender
+decrypted only by receiver
+
+this is end to end encryption.
+
+PGP
+SMIME
+OTR
+ZRTP
+SSL/TLS
+
+
+ZRTP is a cryptographic key-agreement protocol to negotiate the keys for encryption between two end points in a Voice over Internet Protocol phone telephony call based on the Real-time Transport Protocol. It uses Diffie–Hellman key exchange and the Secure Real-time Transport Protocol for encryption.
+
+
+
+Off-the-Record Messaging (OTR) is a cryptographic protocol that provides encryption for instant messaging conversations. OTR uses a combination of AES symmetric-key algorithm with 128 bits key length, the Diffie–Hellman key exchange with 1536 bits group size, and the SHA-1 hash function. In addition to authentication and encryption, OTR provides forward secrecy and malleable encryption.
+
+The primary motivation behind the protocol was providing deniable authentication for the conversation participants while keeping conversations confidential, like a private conversation in real life, or off the record in journalism sourcing. This is in contrast with cryptography tools that produce output which can be later used as a verifiable record of the communication event and the identities of the participants. The initial introductory paper was named "Off-the-Record Communication, or, Why Not To Use PGP".[1]
+
+The OTR protocol was designed by cryptographers Ian Goldberg and Nikita Borisov and released on 26 October 2004.[2] They provide a client library to facilitate support for instant messaging client developers who want to implement the protocol. A Pidgin and Kopete plugin exists that allows OTR to be used over any IM protocol supported by Pidgin or Kopete, offering an auto-detection feature that starts the OTR session with the buddies that have it enabled, without interfering with regular, unencrypted conversations. Version 4 of the protocol[3] is currently[when?] being designed by a team led by Sofía Celi, and reviewed by Nik Unger and Ian Goldberg. This version aims to provide online and offline deniability, to update the cryptographic primitives, and to support out-of-order delivery and asynchronous communication.
+
+Zero Knowledge systems
+such systems cannot disclose information to 3rd parties.

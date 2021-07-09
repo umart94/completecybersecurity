@@ -1,0 +1,23 @@
+in mozilla, enable a proxy
+go to a website
+use burp suite 
+
+turn interceptor on
+forward requests.
+
+this will show us all the domains, that the website is connecting to.
+
+we need to trust portswigger ca certificate.
+
+instead
+we can use burpsuite embedded browser, and use that to intercept requests.
+
+we can see that 1 website links to another 3rd party website
+and that 3rd party website will link to 4th party website and 
+this forms a chain.
+
+we can see which previous website referred us, to the next website in the chain
+
+using the http-referer
+
+there are methods to hids this.

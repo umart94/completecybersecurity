@@ -1,0 +1,80 @@
+UncomplicatedFirewall - frontend for iptables
+framework for managing netfilter
+and command line interface.
+
+
+commands : 
+
+ufw status
+
+ufw enable
+
+ufw status
+
+ufw default deny incoming
+
+ufw default deny outgoing
+
+ufw default allow incoming
+
+ufw default allow outgoing
+
+ufw allow out 22
+
+ufw delete allow out 22
+
+ufw status numbered
+
+ufw delete 2
+
+
+ufw allow out 67:68/udp
+
+ufw is also adding ipv6 rules with ipv4 rules
+
+we can edit /etc/default/ufw
+
+and change
+
+IPV6 = yes
+
+to IPV6 = no
+
+and reenable firewall
+
+
+
+there is also gufw
+
+
+
+shorewall - is another tool ( more powerful than ufw)
+
+gufw
+
+
+
+linux firewalls are not applications aware
+linux-firewall.org
+
+
+windows firewall are application aware
+
+
+
+What is ebtables?
+The ebtables program is a filtering tool for a Linux-based bridging firewall. It enables transparent filtering of network traffic passing through a Linux bridge. The filtering possibilities are limited to link layer filtering and some basic filtering on higher network layers. Advanced logging, MAC DNAT/SNAT and brouter facilities are also included.
+
+The ebtables tool can be combined with the other Linux filtering tools (iptables, ip6tables and arptables) to make a bridging firewall that is also capable of filtering these higher network layers. This is enabled through the bridge-netfilter architecture which is a part of the standard Linux kernel.
+
+The ebtables and arptables codebase is maintained by the netfilter developers, who were so kind to take over maintenance of the software. This website is kept mainly as a documentation reference.
+
+About this website
+This website hosts the information related to the ebtables firewall tool.
+
+This is also a reference for the Linux bridge-netfilter code. The bridge-netfilter code gives a Linux bridge the functionality of a bridging IP/IPv6/ARP firewall, by letting iptables, ip6tables and arptables process bridged IPv4, IPv6 and ARP packets. Such packets encapsulated inside a vlan or pppoe header can also be filtered. Transparent IP NAT is also possible.
+
+Description
+Arptables is used to set up, maintain, and inspect the tables of ARP packet filter rules in the Linux kernel. Several different tables may be defined. Each table contains a number of built-in chains and may also contain user-defined chains.
+
+Each chain is a list of rules which can match a set of packets. Each rule specifies what to do with a packet that matches. This is called a 'target', which may be a jump to a user-defined chain in the same table.

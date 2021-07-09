@@ -1,0 +1,14 @@
+use live operating systems on usbs.
+tails
+https://www.knopper.net/knoppix/index-en.html - knoppix
+live debian
+whonix
+disposable vms
+
+vm snapshot - restore to clear snapshot afterwards.
+
+any method where whole OS or VM is disposable.
+mitigates risk of privacy invasion.
+
+
+

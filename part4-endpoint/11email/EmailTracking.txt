@@ -1,0 +1,30 @@
+3rd party content in emails can contact remote servers and track us..
+
+log ip address
+determine browser
+email client functionality
+plugins installed
+
+email can also attempt to hack and inject malware 
+
+render email as text instead of html
+
+use virtual machines
+use pgp
+use anonymizing web services.
+
+in Tor networks, through correlation we can identify the devices that the user sends his data through
+i.e the multiple routers that will be used ( according to the tor network ) and path will be traced back to the sender.
+
+
+mail server would still associate with a provider
+not entirely anonymous.
+
+vpn
+nested vpn
+tor
+
+
+email providers block anonymizing service.
+yahoo does not allow tor
+

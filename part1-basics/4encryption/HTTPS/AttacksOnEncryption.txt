@@ -1,0 +1,18 @@
+pinning - process of associating a host with expected x509 certificate or public key.
+
+i will only accept one specific public key.
+tie it to fingerprint or hash
+
+be anonymous
+
+if vpn or tor is used if fake certificate is issued. then no data can be associated with us.
+
+vpn will not protect.. anonymizers will protect more.
+
+
+
+VPN IPSEC SSH HTTPS SSL / TLS ---> after it reaches vpn terminator ----> traffic comes out as https
+
+if intercepted, then the certificate can be changed.
+
+

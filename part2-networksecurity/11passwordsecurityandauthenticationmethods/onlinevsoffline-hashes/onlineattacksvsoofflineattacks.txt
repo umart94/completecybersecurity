@@ -1,0 +1,65 @@
+online attacks are extremely slow , because of response time of
+crypto system, 1 guess a second ~ 1000 guesses a second.
+
+modern crypto systems defend against these online attacks
+
+for e.g number of requests being made.
+block ip of attacker once certain number of attempts made
+inform the user / owner through notification
+
+that account maybe locked out ( n number of attempts)
+
+
+usual defence is to block the ip address.
+
+attacker uses ip hiding for e.g botnets. ip spoofing.
+
+with online attacks , we are limited in the number of usernames and 
+passwords we can attempt to crack.
+
+
+In offline attacks, the attackers have access to the password hashes
+there is no interaction with the crypto system
+
+
+the goal of offline attack , is to convert the hash value into a plaintext value (Pre-Computed Hash Values)
+
+in real world, password is concatenated with salt 
+
+because users have salts
+its not feasible to store (Pre-Computed Hash Values) in a large file called rainbow tables because the salts might be different for each iteration (each time the hash algo + salt is generated for new users)
+
+now that gpu based cracking is possible, there is no need for very large rainbow table files.
+
+gpus offer more better performance for cracking passwords.
+
+we should use salts
+and key derivation functions
+
+repeated iterations of cryptographic hashes so that it becomes difficult for the bruteforcing softwares to work.
+
+
+take hash once with a cryptographic algorithm
+apply salt to it
+produce hash key
+run it through N number of iterations
+so we get a completely random value afterwards.
+
+
+another way to make hashes secure is to use another secret key to generate password
+
+Encrypt the hash with another algorithm, use a password for it
+
+then, use that to store into the database.
+
+
+but where to store the password used to encrypt the first hash
+
+the answer is store them to seperate physical locations
+
+the best option, is to store it on hardware security module.
+rack mountable servers
+micro hsms
+
+second way to encrypt is to include a secret key inside the hash
+HMAC.

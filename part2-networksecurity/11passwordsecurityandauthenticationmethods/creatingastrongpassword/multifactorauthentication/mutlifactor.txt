@@ -1,0 +1,47 @@
+Multifactor authentication combines two or more independent credentials: what the user knows (password), what the user has (security token) and what the user is (biometric verification).
+
+Knowledge factors – this type of knowledge-based authentication (KBA) typically requires the user to provide the answer to a secret question. 
+
+Possession factors - a user must have something specific in their possession in order to log in, such as a security token, a key fob, or a phone’s SIM card. For mobile authentication, a smartphone often provides the possession factor, in conjunction with an OTP app.
+
+Inherence factors - any biological traits the user has that are confirmed for login. This category includes the scope of biometric authentication methods, including the following:
+
+Retina scans
+Iris scans
+Fingerprint scans
+Hand geometry
+Facial recognition
+Earlobe geometry
+Voice recognition
+
+
+
+Location factors – the user’s current location is often suggested as a fourth factor for authentication. Again, the ubiquity of smartphones can help ease the authentication burden here: Users typically carry their phones and most smartphones have a GPS device, enabling reasonable surety confirmation of the login location.
+
+Time factors – Current time is also sometimes considered a fourth factor for authentication or alternatively a fifth factor. Verification of employee IDs against work schedules could prevent some kinds of user account hijacking attacks. A bank customer can't physically use their ATM card in America, for example, and then in Russia 15 minutes later. These kinds of logical locks could prevent many cases of online bank fraud.
+
+Multifactor authentication technologies:
+Typical MFA scenarios include:
+
+Swiping a card and entering a PIN.
+Logging into a website and being requested to enter an additional one-time password (OTP) that the website's authentication server sends to the requester's phone or email address.
+Downloading a VPN client with a valid digital certificate and logging into the VPN before being granted access to a network.
+Swiping a card, scanning a fingerprint and answering a security question.
+Attaching a USB hardware token to a desktop that generates a one-time passcode and using the one-time passcode to log into a VPN client.
+
+
+
+The technologies required to support these scenarios include the following:
+
+Security tokens: Small hardware devices that the owner carries to authorize access to a network service. The device may be in the form of a smart card or may be embedded in an easily-carried object such as a key fob or USB drive. Hardware tokens provide the possession factor for multifactor authentication. Software-based tokens are becoming more common than hardware devices.
+
+Soft tokens: Software-based security token applications that generate a single-use login PIN. Soft tokens are often used for multifactor mobile authentication, in which the device itself – such as a smartphone – provides the possession factor.
+
+Mobile authentication: Variations include: SMS messages and phone calls sent to a user as an out-of-band method, smartphone OTP apps, SIM cards and smartcards with stored authentication data.
+
+Biometrics: Components of biometric devices include a reader, a database and software to convert the scanned biometric data into a standardized digital format and to compare match points of the observed data with stored data.
+
+GPS: Smartphone apps with GPS can provide location an authentication factor.
+
+The past, present and future of multifactor authentication
+In the United States, interest in multifactor authentication has been driven by regulations such as the Federal Financial Institutions Examination Council (FFIEC) directive calling for multifactor authentication for Internet banking transactions.

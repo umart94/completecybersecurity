@@ -1,0 +1,6 @@
+debian
+openBSD
+ArchLinux
+
+fixubuntu
+runs scripts to block telemetry

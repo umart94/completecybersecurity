@@ -1,0 +1,18 @@
+ip address show
+
+ip link show
+
+ip link set DEVICE up or ip link set DEVICE down
+
+/bin/netstat (replaced by ss, for which I’ll dedicate another blog post entirely)
+/sbin/ifconfig
+/sbin/ipmaddr (replaced by ip maddress)
+/sbin/iptunnel
+/sbin/mii-tool (ethtool should appropriately replace it)
+/sbin/nameif
+/sbin/plipconfig
+/sbin/rarp
+/sbin/route
+/sbin/slattach
+
+If so and there is just no alternative to using them that comes from iproute2 (well, the ip or ss commands) that you can use to do the same, I want to know about how you are using them. We’re always watching for things that might be broken by changes; we want to avoid breaking things when possible.

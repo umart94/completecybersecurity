@@ -1,0 +1,19 @@
+physically and logically putting devices on seperate networks.
+and restricting how and when devices can communicate on each other..
+
+if attacker or malware has compromised a system on a network,
+then it can propagate to other devices on the network
+
+network isolation mitigates this attack
+
+IoT devices are extremely insecure.
+with older linux kernels
+not well maintained
+have lots of vulnerabilities.
+
+they are seen as appliances and are rampant for being insecure, and never updated.
+
+especially if they are connected to the internet.
+
+we need to keep these IoT devices on seperate networks.
+we also need to control how, they might connect to the internet.

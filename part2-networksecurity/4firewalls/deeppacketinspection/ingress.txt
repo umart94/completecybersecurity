@@ -1,0 +1,6 @@
+because of NAT
+
+no traffic can enter through firewall and access any device , except through DMZ or port forwarding..
+
+windows firewall and linux ip tables is host based firewall.
+

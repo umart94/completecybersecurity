@@ -1,0 +1,16 @@
+Set of protocols for connecting enables exchange of information between calls
+Enables roaming.
+SS7 Security related issues.
+Closed system – networks could be trusted but they cant
+No authentication method
+Phone number
+Access to SS7
+
+MAP + CAMEL SS7
+only offered to government and federal investigation agencies. ( :'( )
+
+Fundamental flaw in how BGP was designed from the old days. Give me a transit or peering connection where filters aren't in place, and you can announce anyone's IP blocks with their AS (SS7 is very similar, as it was built for a closed telcom ecosystem where all participants were trusted: https://www.youtube.com/watch?v=lQ0I5tl0YLY).
+There are efforts to move to a more secure version of BGP, but that'll be done around the same time the transition to IPv6 is complete.
+
+
+But you can just connect to a carrier SS7 network because you bought an SS7 gateway appliance or because bought a SIP trunk to some third party. It doesn't work like this. You need to have an agreement with a carrier to even talk to their gateway. These are usually well vetted as well because you are entering into a financial agreement with a carrier when you connect to them this way.

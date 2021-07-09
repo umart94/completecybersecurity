@@ -1,0 +1,23 @@
+does not solve
+Quality of service problem
+guarantee of message being sent
+observing of emails is still possible e.g by email provider.
+
+
+
+PGP has no session keys
+no compartmentalisation
+key is single point of failure.
+
+change keys frequently.
+who we contact
+key storage security
+transported securely.
+keymanagement is a burden
+email client bugs.
+stored draft messages of an email message.
+
+
+dont use pgp within email clients due to bugs
+instead use tails applet - copy paste gpg clipboard encrypt decrypt sign. is a more secure option.
+

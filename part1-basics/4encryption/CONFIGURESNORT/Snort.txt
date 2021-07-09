@@ -1,0 +1,507 @@
+register on snort website
+download the version of snapshot rules of your snort version
+extract only the rules inside the C:\Snort\rules folder.
+
+then
+copy preproc rules
+
+now rules process has been done and we have installed rules.
+
+
+now go to etc folder
+edit snort.conf
+
+###################################################
+# Step #1: Set the network variables.  For more information, see README.variables
+###################################################
+
+
+Step1
+
+# Setup the network addresses you are protecting
+ipvar HOME_NET 192.168.100.0/24
+
+put your home network NAT IP here. i.e the private ip assigned to machine.
+
+
+
+# Set up the external network addresses. Leave as "any" in most situations
+ipvar EXTERNAL_NET !$HOME_NET
+
+
+
+
+Step 2 
+
+CHANGE
+
+# Path to your rules files (this can be a relative path)
+# Note for Windows users:  You are advised to make this an absolute path,
+# such as:  c:\snort\rules
+var RULE_PATH ../rules
+var SO_RULE_PATH ../so_rules
+var PREPROC_RULE_PATH ../preproc_rules
+
+
+
+TO
+
+
+# Path to your rules files (this can be a relative path)
+# Note for Windows users:  You are advised to make this an absolute path,
+# such as:  c:\snort\rules
+
+saray paths ko fully copy kark likhdo.. full path dena hai.
+comment the SO RUle with #
+
+var RULE_PATH c:\snort\rules
+#var SO_RULE_PATH ../so_rules
+var PREPROC_RULE_PATH ../preproc_rules
+
+
+
+
+
+
+
+
+
+
+In step3 - Add a log directory
+
+# Configure default log directory for snort to log to.  For more information see snort -h command line options (-l)
+#
+#uncomment this logdir - set it to c:\Snort\log
+
+config logdir: c:\Snort\log
+
+
+
+
+
+Step4- configure the libraries that snort loads when it loads in windows.
+
+snort has lib folder
+dynamic engine
+dynamic preprocessor
+
+
+
+# path to dynamic preprocessor libraries
+dynamicpreprocessor directory c:\Snort\lib\snort_dynamicpreprocessor
+
+# path to base preprocessor engine
+dynamicengine /usr/local/lib/snort_dynamicengine/libsf_engine.so
+
+
+
+linux me ye so file hai
+
+
+windows me name bhi different hai and windows me dll hai.
+
+STEP 4
+
+
+
+###################################################
+# Step #4: Configure dynamic loaded libraries.  
+# For more information, see Snort Manual, Configuring Snort - Dynamic Modules
+###################################################
+
+# path to dynamic preprocessor libraries
+dynamicpreprocessor directory c:\Snort\lib\snort_dynamicpreprocessor
+
+# path to base preprocessor engine
+dynamicengine C:\Snort\lib\snort_dynamicengine\sf_engine.dll
+
+# path to dynamic rules libraries
+#dynamicdetection directory /usr/local/lib/snort_dynamicrules
+
+
+
+
+
+
+
+
+
+
+
+###################################################
+# Step #5: Configure preprocessors
+# For more information, see the Snort Manual, Configuring Snort - Preprocessors
+###################################################
+
+
+sNORT DOES NOT RUN IN INLINE MODE IN WINDOWS
+SO WE HAVE TO COMMENT OUT THE PACKET NORMALIZATIONS PREPROCESSOR DIRECTIVES.
+
+
+
+
+
+comment out
+
+# Back Orifice detection.
+#preprocessor bo
+
+
+
+
+# Reputation preprocessor. For more information see README.reputation
+preprocessor reputation: \
+   memcap 500, \
+   priority whitelist, \
+   nested_ip inner, \
+   whitelist $WHITE_LIST_PATH/white_list.rules, \
+   blacklist $BLACK_LIST_PATH/black_list.rules 
+   
+   
+   
+here we can configure  blacklisted or whitelisted ip addresses.
+
+change it to
+
+# Reputation preprocessor. For more information see README.reputation
+preprocessor reputation: \
+   memcap 500, \
+   priority whitelist, \
+   nested_ip inner, \
+   whitelist $WHITE_LIST_PATH\white.list, \
+   blacklist $BLACK_LIST_PATH\black.list 
+   
+   
+   
+we will use list files here, as these files will only contain ip addresses, and not the snort rules.
+
+
+create
+white.list
+black.list
+
+file in snort\rules
+
+then
+
+we configure
+
+Step 6 
+
+
+###################################################
+# Step #6: Configure output plugins
+# For more information, see Snort Manual, Configuring Snort - Output Modules
+###################################################
+
+
+this step is for linux
+
+
+
+
+
+
+
+###################################################
+# Step #7: Customize your rule set
+# For more information, see Snort Manual, Writing Snort Rules
+#
+# NOTE: All categories are enabled in this conf file
+###################################################
+
+
+
+replace / with \
+
+dont do global replace all
+
+instead replace just the slashes in rules manually
+
+because there are lots of CIDR notations and other configurations.. so those use /
+
+
+
+
+
+
+
+
+###################################################
+# Step #8: Customize your preprocessor and decoder alerts
+# For more information, see README.decoder_preproc_rules
+###################################################
+
+change to windows based slashes and remove hashes
+
+
+# decoder and preprocessor event rules
+include $PREPROC_RULE_PATH\preprocessor.rules
+include $PREPROC_RULE_PATH\decoder.rules
+include $PREPROC_RULE_PATH\sensitive-data.rules
+
+
+
+###################################################
+# Step #9: Customize your Shared Object Snort Rules
+# For more information, see http://vrt-blog.snort.org/2009/01/using-vrt-certified-shared-object-rules.html
+###################################################
+
+
+
+we wont be using shared object snort rules in windows.
+
+
+
+
+After installing
+
+npcap
+winpcap
+snort
+
+
+run elevated command prompt
+
+run snort -V to check version
+
+
+then run snort -W to check the interface against which to run snort
+
+then use snort -i interface Flag to run snort against that interface.
+
+snort -i 6 -c c:\Snort\etc\snort.conf -T
+
+
+
+
+
+
+
+
+
+
+
+[ Number of patterns truncated to 20 bytes: 605 ]
+pcap DAQ configured to passive.
+The DAQ version does not support reload.
+Acquiring network traffic from "\Device\NPF_{}".
+
+        --== Initialization Complete ==--
+
+   ,,_     -*> Snort! <*-
+  o"  )~   Version 2.9.16.1-WIN64 GRE (Build 140)
+   ''''    By Martin Roesch & The Snort Team: http://www.snort.org/contact#team
+           Copyright (C) 2014-2020 Cisco and/or its affiliates. All rights reserved.
+           Copyright (C) 1998-2013 Sourcefire, Inc., et al.
+           Using PCRE version: 8.10 2010-06-25
+           Using ZLIB version: 1.2.11
+
+           Rules Engine: SF_SNORT_DETECTION_ENGINE  Version 3.1  <Build 1>
+           Preprocessor Object: SF_SSLPP  Version 1.1  <Build 4>
+           Preprocessor Object: SF_SSH  Version 1.1  <Build 3>
+           Preprocessor Object: SF_SMTP  Version 1.1  <Build 9>
+           Preprocessor Object: SF_SIP  Version 1.1  <Build 1>
+           Preprocessor Object: SF_SDF  Version 1.1  <Build 1>
+           Preprocessor Object: SF_REPUTATION  Version 1.1  <Build 1>
+           Preprocessor Object: SF_POP  Version 1.0  <Build 1>
+           Preprocessor Object: SF_MODBUS  Version 1.1  <Build 1>
+           Preprocessor Object: SF_IMAP  Version 1.0  <Build 1>
+           Preprocessor Object: SF_GTP  Version 1.1  <Build 1>
+           Preprocessor Object: SF_FTPTELNET  Version 1.2  <Build 13>
+           Preprocessor Object: SF_DNS  Version 1.1  <Build 4>
+           Preprocessor Object: SF_DNP3  Version 1.1  <Build 1>
+           Preprocessor Object: SF_DCERPC2  Version 1.0  <Build 3>
+
+Snort successfully validated the configuration!
+Snort exiting
+
+A npf (network packet filter) device is not an external device somewhere in your network, it is a piece of software in your PC provided by WinPcap, the library which Wireshark uses to capture packets. So it appeared in your system because you (or someone else who can install software to your PC) have installed Wireshark along with WinPcap. See details here.
+
+So it is something you can use to monitor the traffic of your own PC, not something that someone else would use to spy on you (unless they can control your PC and run packet capture in the background without your knowledge, but if they can, packet capture is one of the least harmful activities they could do).
+
+
+
+
+As a local administrator do this:
+
+net start npf
+
+to start that driver. Wireshark (well, more specifically the WinPcap
+library) should be doing this on its own, but that operation will fail
+if you don't run Wireshark as a local administrator. The driver needs
+to be running whenever you're capturing traffic; most of the time that
+means it gets started once per boot.
+
+If you want to have it running all the time, you can do this (on XP and
+newer):
+
+sc config npf start= auto
+
+(note that the space between start= and auto is required) to make the
+driver start automatically at boot time. This means that the programs
+you use won't have to start it themselves, which means you'll never have
+to run them as a local admin.
+
+Another possibility is that the driver is running, but somehow got
+messed up to the point where it's denying open requests for the capture
+interface. You might be able to:
+
+net stop npf
+net start npf
+
+to get it to re-set itself. (A reboot would also reset it, assuming it
+starts on boot or is allowed to start because the WinPcap-using program
+is run as an admin.)
+
+A final possibility is, perhaps your network card disappeared from the
+Windows networking stack at some point; it's possible that the handle
+that NPF holds to the card will get invalidated at that point. (If the
+card is disabled or removed when you try to capture on it, then there's
+no way the handle could possibly work.) Restarting the npf driver
+should also help here, as it will re-enumerate the existing network
+cards and re-generate its list.
+
+(I don't *think* that's required in recent versions of WinPcap anymore,
+but it might be.)
+And, what is the string of numbers and letters following NPF_...?
+It's a GUID (globally unique ID). Each NIC in the system gets assigned
+a GUID by Windows when the NIC gets discovered (though I don't know if
+those GUIDs will change if the NIC goes away and comes back; they
+might). When the npf driver starts up, it looks at all the installed
+network cards, and creates a \Device\NPF_<copy of the GUID> device that
+user programs can use to talk to npf itself. The WinPcap API uses this
+interface to capture packets.
+Just when I thought all was over, a week later, my wireshark is
+working again. Did WinPcap fix itself or what?
+If the machine restarted shortly before this, that could be the explanation.
+
+
+
+
+C:\Snort\rules\local.rules
+
+
+edit the rules
+
+#-------------
+# LOCAL RULES
+#-------------
+#start above 999999
+
+alert icmp any any -> any any (msg:"Testing ICMP Alert"; sid:1000001;)
+alert udp any any -> any any (msg:"Testing UDP alert"; sid:1000002;)
+alert tcp any any -> any any (msg:"Testing TCP alert"; sid:1000003;)
+
+snort -i 6 -c c:\Snort\etc\snort.conf -A console
+
+-A is alert mode
+console - alert on console ( CMD ) on windows.
+
+
+
+----------------------------------------
+download and install
+adodb5
+phplot
+jpgraph
+mysql
+wampstack
+php
+apache2
+or iis
+
+
+download base front end
+
+
+create a mysql user give it privileges
+
+configure this inside base folder
+
+base_config.php
+
+place the library files in apache2/htdocs folder ( document root)
+
+edit the files to add the mysql config and user password and library locations.
+
+connect to mysql root
+
+go to base directory sql scripts
+
+connect to my sql
+
+use snortuser;
+
+SOURCE C:\Bitnami\wampstack-7.4.11-0\apache2\htdocs\base\sql\create_base_tbls_mysql.sql
+
+enter this command
+
+
+
+
+
+to delete a windows service .. type sc delete servicename
+servicename must match exactly..
+
+delete the folders
+
+
+
+BASE works with older version of php.. so use that.
+
+
+
+Download latest version of base
+
+copy base_conf.php ( leave it unedited for backup )
+
+edit it
+
+
+
+we also need a create_mysql.sql script
+
+run these inside 1 same database with proper privileges :
+
+SOURCE C:\Bitnami\wampstack-7.4.11-0\apache2\htdocs\base\sql\create_mysql.sql
+
+SOURCE C:\Bitnami\wampstack-7.4.11-0\apache2\htdocs\base\sql\create_base_tbls_mysql.sql
+
+after connecting to mysql root.. and running
+
+
+use database;
+
+
+SOURCE C:\Bitnami\wampstack-7.4.11-0\apache2\htdocs\base\sql\create_mysql.sql
+
+SOURCE C:\Bitnami\wampstack-7.4.11-0\apache2\htdocs\base\sql\create_base_tbls_mysql.sql
+
+
+
+
+
+-----------------------------------------
+
+
+snort -i 6 -c c:\Snort\etc\snort.conf -A console
+
+
+install a syslog server on windows
+
+then enter this in output section of snort.conf
+
+# syslog
+# output alert_syslog: LOG_AUTH LOG_ALERT
+  output alert_syslog: host=127.0.0.1:514, LOG_AUTH LOG_ALERT
+
+
+snort -i 6 -c c:\Snort\etc\snort.conf -s
+
+
+the s flag sens output to syslog server.
+
+18.204.224.163
+
+

@@ -1,0 +1,38 @@
+ .\hashcat.exe -m 0 -a 0 hashes.txt rockyou.txt
+hashcat (v6.1.1) starting...
+
+* Device #1: WARNING! Kernel exec timeout is not disabled.
+             This may cause "CL_OUT_OF_RESOURCES" or related errors.
+             To disable the timeout, see: https://hashcat.net/q/timeoutpatch
+* Device #2: WARNING! Kernel exec timeout is not disabled.
+             This may cause "CL_OUT_OF_RESOURCES" or related errors.
+             To disable the timeout, see: https://hashcat.net/q/timeoutpatch
+* Device #3: Unstable OpenCL driver detected!
+
+This OpenCL driver has been marked as likely to fail kernel compilation or to produce false negatives.
+You can use --force to override this, but do not report related errors.
+
+CUDA API (CUDA 11.1)
+====================
+* Device #1: GeForce GTX 1050, 1646/2048 MB, 5MCU
+
+OpenCL API (OpenCL 1.2 CUDA 11.1.114) - Platform #1 [NVIDIA Corporation]
+========================================================================
+* Device #2: GeForce GTX 1050, skipped
+
+OpenCL API (OpenCL 2.1 ) - Platform #2 [Intel(R) Corporation]
+=============================================================
+* Device #3: Intel(R) UHD Graphics 630, skipped
+
+Minimum password length supported by kernel: 0
+Maximum password length supported by kernel: 256
+
+Hash 'hashes.txt': Token length exception
+No hashes loaded.
+
+Started: Sat Nov 21 14:50:43 2020
+Stopped: Sat Nov 21 14:50:45 2020
+
+
+
+( I GAVE THE WRONG FILENAME !!! :D)

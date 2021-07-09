@@ -1,0 +1,105 @@
+
+part 2
+
+generate key on offline computer
+use livecd ( on usb stick )
+
+then transfer the keys on a network computer.
+
+
+gui for creating master keys : 
+
+seahorse
+
+mac gpg suite.
+
+----------------------
+
+we create two keys using gpg2
+public key - signing and certifying (SC)
+subkey - used for encrypting (E)
+
+signing is an action against arbitrary data
+certifying is signing of another key
+
+certifying a key is known as key signing ( what )
+
+gpg creates signing only key using master key and creates an encryption key i.e.  subkey automatically
+
+without subkey for encryption , we cannot have encrypted emails
+subkeys are a seperate key pair
+but automatically associated with the main key pair
+
+use primary key for signing and certifying a key
+and use seperate subkey for E for day to day use.
+
+
+
+
+
+commands
+sudo apt-get install haveged gnupg2 gnupg-agent libpth20 pinentry-curses libccid pcscd scdaemon libksba8 paperkey opensc
+
+
+gpg2 --gen-key
+
+
+1.RSA AND RSA default.
+2.DSA and Elgamal
+3.DSA sign only
+4. RSA sign only
+
+rsa keys may be between 1024 and 4096 bits long
+
+
+masterkey pair exported
+
+we want to add subkeys.
+
+gpg2 --expert --edit-key ID
+
+gpg2 -k
+
+addkey
+4 rsa sign only ( for a subkey - for day to day uses - sign only - gpg will automatically use the latest key generated )
+
+gpg --output bobs.gpg-revocation-certificate --gen-revoke KEYID
+
+0 - no reason specified
+1- key compromised
+2 - key is superseded
+3 - key is no longer used
+q - cancel
+
+
+
+gpg2 --export-secret-keys -armor bob@bob.com > bob.private.gpg.asc ( export private key through command line )
+gpg2 --export -armor bob@bob.com > bob.public.gpg.asc ( export public key through command line )
+
+gpg2 --export-secret-subkeys bob@bob.com > subkeys ( export subkeys (encryption keys for day to day usage) through command line )
+
+gpg2 --delete-secret-key bob@bob.com
+
+delete this key from the keyring
+
+gpg2 --list-secret-keys
+
+gpg2 --import subkeys
+
+shred --remove subkeys
+gpg2 --list-secret-keys
+
+
+sec# indicates that secret key is not present.
+
+
+revoke keys and subkeys
+
+gpg2 --import bob.private.gpg.asc
+gpg2 --edit-key bob@bob.com
+
+
+
+key 2
+revkey  (revoke key )
+

@@ -1,0 +1,38 @@
+Mobile towers can be set up and imitate the real providers mobile towers.
+IMSI associated with sim card used to identify the user
+a randomly generated TMSI is actually sent
+
+there must be authentication , 
+but there is no authentication
+
+
+it requires that the network authenticate to the mobile network
+but the mobile network will not authenticate itself to the phone ( BHAAIIIIII WAAAAAHHHHHH !!!! )
+
+force connected phone to use no call encryption
+
+
+convert data to audio - captured using wireshark
+
+
+these fake base stations are deployed throughout the country.
+
+DRTbox
+
+
+Software Defined Radio
+
+OpenBTS
+
+if we connect imsi catcher to voip provider and then to internet 
+people use phones normally
+so we have a mobile network that
+neighbours will connect to and we can eavesdrop on these calls.
+
+F-DROID
+snoopsnitch
+
+Inside Radio: An Attack and Defense Guide
+By Qing Yang, Lin Huang
+
+DISABLE 2G - connect only to 4G.

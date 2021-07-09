@@ -1,0 +1,63 @@
+IEEE 802.11i-2004
+
+WPA2
+
+CCMP
+
+use CCMP
+seen as AES
+
+TKIP+AES ( backward compatibility )
+
+best option is CCMP ( AES )
+
+CCMP is an AES based counter mode mechanism ctr
+
+CCM CTR for data confidentiality
+and
+CBC MAC for authentication and integrity..
+
+
+AES is slower than TKIP
+needs a more powerful access point.
+
+
+
+
+WPA2 Personal - designed for home, does not require authentication server.
+256 bit key generated from password
+
+
+personal mixed mode allows for coexistence of wpa and wpa2 clients on a common SID.
+
+
+WPA2 ENTERPRISE
+
+802.1X Mode
+RADIUS Authentication server
+extensible authentication protocol.
+
+create different wireless networks with different security levels.
+
+
+both wpa and wpa2 are at risk of :
+Dictionary
+brute force password guessing
+
+attacks
+
+------------------
+
+weakness in salt in wpa and wpa2
+both use ssid as salt value
+
+network name = ssid
+Salts and SSID should be random values that should be added..
+random values in the password and SSID will make password more secure.
+
+common names
+
+
+https://www.renderlab.net/projects/WPA-tables/
+
+
